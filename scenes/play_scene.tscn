@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://botafqrb248p7"]
+
+[ext_resource type="Script" uid="uid://colio1la8bs1b" path="res://scenes/shelf.gd" id="1_que2y"]
+[ext_resource type="PackedScene" uid="uid://dkbqxgkjy5dog" path="res://scenes/shelf.tscn" id="1_wklqy"]
+[ext_resource type="PackedScene" uid="uid://chndlco7bn2xu" path="res://scenes/sortable_item.tscn" id="2_que2y"]
+
+[node name="PlayScene" type="Node2D"]
+script = ExtResource("1_que2y")
+
+[node name="Shelf" parent="." instance=ExtResource("1_wklqy")]
+position = Vector2(70, 70)
+scale = Vector2(4, 4)
+
+[node name="Shelf2" parent="." instance=ExtResource("1_wklqy")]
+position = Vector2(300, 70)
+scale = Vector2(4, 4)
+
+[node name="SortableItem" parent="." instance=ExtResource("2_que2y")]
+position = Vector2(194, 78)
+scale = Vector2(4, 4)
