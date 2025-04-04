@@ -39,7 +39,7 @@ func drop():
 	&& lastHoveredArea.get_parent().heldSortable == null :
 		position = lastHoveredArea.global_position
 		if lastArea != null:
-			lastArea.get_parent().drop_sortable()
+			lastArea.get_parent().remove_sortable()
 		lastArea = lastHoveredArea
 		lastHoveredArea.get_parent().hold_sortable($".")
 	elif lastArea != null:

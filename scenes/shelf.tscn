@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://bd1b7yuh7jh1n"]
+
+[ext_resource type="PackedScene" uid="uid://dkbqxgkjy5dog" path="res://scenes/spot.tscn" id="1_eyi4x"]
+
+[node name="Shelf" type="Node2D"]
+
+[node name="Spot" parent="." instance=ExtResource("1_eyi4x")]
+scale = Vector2(4, 4)
+
+[node name="Spot2" parent="." instance=ExtResource("1_eyi4x")]
+position = Vector2(100, 0)
+scale = Vector2(4, 4)
+
+[node name="Spot3" parent="." instance=ExtResource("1_eyi4x")]
+position = Vector2(200, 0)
+scale = Vector2(4, 4)

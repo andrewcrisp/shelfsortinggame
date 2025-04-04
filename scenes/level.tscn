@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://botafqrb248p7"]
 
 [ext_resource type="Script" uid="uid://bw0xa6hnbpimj" path="res://scripts/level.gd" id="1_mx8sn"]
-[ext_resource type="PackedScene" uid="uid://dkbqxgkjy5dog" path="res://scenes/spot.tscn" id="2_ppgk2"]
+[ext_resource type="PackedScene" uid="uid://bd1b7yuh7jh1n" path="res://scenes/shelf.tscn" id="2_ppgk2"]
 [ext_resource type="PackedScene" uid="uid://chndlco7bn2xu" path="res://scenes/sortable_item.tscn" id="3_2r41h"]
 [ext_resource type="PackedScene" uid="uid://duxdyd7lkrwli" path="res://scenes/spawner.tscn" id="4_klq6b"]
 
@@ -15,14 +15,5 @@ position = Vector2(358, 184)
 position = Vector2(230, 211)
 scale = Vector2(4, 4)
 
-[node name="Spot" parent="." instance=ExtResource("2_ppgk2")]
+[node name="Shelf" parent="." instance=ExtResource("2_ppgk2")]
 position = Vector2(100, 50)
-scale = Vector2(4, 4)
-
-[node name="Spot2" parent="." instance=ExtResource("2_ppgk2")]
-position = Vector2(200, 50)
-scale = Vector2(4, 4)
-
-[node name="Spot3" parent="." instance=ExtResource("2_ppgk2")]
-position = Vector2(300, 50)
-scale = Vector2(4, 4)
