@@ -5,8 +5,10 @@ var grabable = false
 var target = Vector2.ZERO
 var speed = 5
 var velocity
-var hoveringArea
-var lastArea
+#var hoveringArea
+var lastHoveredArea = null
+var currentArea = null
+var lastArea = null
 
 func _ready():
 	pass
@@ -25,31 +27,36 @@ func handleClick():
 	if isFollowingMouse:
 		drop()
 	else:
-		grab()
+		tryGrab()
 
 func drop():
+	var level = get_tree().get_root().get_node("Level")
+	level.carriedSortable = null
 	isFollowingMouse = false
-	if hoveringArea != null && $Area2D.overlaps_area(hoveringArea):
-		position = hoveringArea.global_position
-		lastArea = hoveringArea
+	z_index = 500
+	if lastHoveredArea != null && $Area2D.overlaps_area(lastHoveredArea):
+		position = lastHoveredArea.global_position
+		lastArea = lastHoveredArea
 	elif lastArea != null:
 		position = lastArea.global_position
 		
 	
-func grab():
-	if grabable:
+func tryGrab():
+	var level = get_tree().get_root().get_node("Level")
+	
+	if level.carriedSortable == null && grabable:
+		z_index = 1000
 		isFollowingMouse = true
+		level.carriedSortable = $"."
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
-	hoveringArea = area
-
-func _on_area_2d_area_exited(_area: Area2D) -> void:
-	hoveringArea = null
-
+	lastHoveredArea = area
+	print("enter area")
+#func _on_area_2d_area_exited(_area: Area2D) -> void:
+	#hoveringArea = null
+	#print("exit")
 
 func _on_area_2d_mouse_entered() -> void:
 	grabable = true
-
-
 func _on_area_2d_mouse_exited() -> void:
 	grabable = false

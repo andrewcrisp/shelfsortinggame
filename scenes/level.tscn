@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://botafqrb248p7"]
+
+[ext_resource type="Script" uid="uid://bw0xa6hnbpimj" path="res://scripts/level.gd" id="1_mx8sn"]
+[ext_resource type="PackedScene" uid="uid://dkbqxgkjy5dog" path="res://scenes/shelf.tscn" id="2_ppgk2"]
+[ext_resource type="PackedScene" uid="uid://chndlco7bn2xu" path="res://scenes/sortable_item.tscn" id="3_2r41h"]
+[ext_resource type="PackedScene" uid="uid://duxdyd7lkrwli" path="res://scenes/spawner.tscn" id="4_klq6b"]
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_mx8sn")
+
+[node name="Shelf" parent="." instance=ExtResource("2_ppgk2")]
+position = Vector2(95, 72)
+scale = Vector2(4, 4)
+
+[node name="SortableItem" parent="." instance=ExtResource("3_2r41h")]
+position = Vector2(230, 211)
+scale = Vector2(4, 4)
+
+[node name="Shelf2" parent="." instance=ExtResource("2_ppgk2")]
+position = Vector2(228, 72)
+scale = Vector2(4, 4)
+
+[node name="Shelf3" parent="." instance=ExtResource("2_ppgk2")]
+position = Vector2(366, 72)
+scale = Vector2(4, 4)
+
+[node name="Spawner" parent="." instance=ExtResource("4_klq6b")]
+position = Vector2(358, 184)
