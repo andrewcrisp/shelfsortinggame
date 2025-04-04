@@ -1,12 +1,12 @@
 [gd_scene load_steps=4 format=3 uid="uid://dkbqxgkjy5dog"]
 
 [ext_resource type="Texture2D" uid="uid://ddfe256c7mtw5" path="res://assets/Basic_Furniture.png" id="1_eyi4x"]
-[ext_resource type="Script" uid="uid://colio1la8bs1b" path="res://scripts/shelf.gd" id="1_xj574"]
+[ext_resource type="Script" uid="uid://colio1la8bs1b" path="res://scripts/spot.gd" id="1_xj574"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eyi4x"]
 size = Vector2(26, 16)
 
-[node name="Shelf" type="Node2D"]
+[node name="Spot" type="Node2D"]
 script = ExtResource("1_xj574")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

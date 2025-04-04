@@ -31,15 +31,17 @@ func handleClick():
 
 func drop():
 	var level = get_tree().get_root().get_node("Level")
-	level.carriedSortable = null
+	level.drop_sortable()
 	isFollowingMouse = false
 	z_index = 500
 	if lastHoveredArea != null \
 	&& $Area2D.overlaps_area(lastHoveredArea) \
 	&& lastHoveredArea.get_parent().heldSortable == null :
 		position = lastHoveredArea.global_position
+		if lastArea != null:
+			lastArea.get_parent().drop_sortable()
 		lastArea = lastHoveredArea
-		lastHoveredArea.get_parent().holdSortable($".")
+		lastHoveredArea.get_parent().hold_sortable($".")
 	elif lastArea != null:
 		position = lastArea.global_position
 		
@@ -50,14 +52,10 @@ func tryGrab():
 	if level.carriedSortable == null && grabable:
 		z_index = 1000
 		isFollowingMouse = true
-		level.carriedSortable = $"."
+		level.hold_sortable($".")
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	lastHoveredArea = area
-	print("enter area")
-#func _on_area_2d_area_exited(_area: Area2D) -> void:
-	#hoveringArea = null
-	#print("exit")
 
 func _on_area_2d_mouse_entered() -> void:
 	grabable = true
