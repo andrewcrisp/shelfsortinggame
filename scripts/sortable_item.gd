@@ -34,9 +34,12 @@ func drop():
 	level.carriedSortable = null
 	isFollowingMouse = false
 	z_index = 500
-	if lastHoveredArea != null && $Area2D.overlaps_area(lastHoveredArea):
+	if lastHoveredArea != null \
+	&& $Area2D.overlaps_area(lastHoveredArea) \
+	&& lastHoveredArea.get_parent().heldSortable == null :
 		position = lastHoveredArea.global_position
 		lastArea = lastHoveredArea
+		lastHoveredArea.get_parent().holdSortable($".")
 	elif lastArea != null:
 		position = lastArea.global_position
 		

@@ -1,3 +1,7 @@
 extends Node2D
 
-var mySortable
+var heldSortable = null
+
+func holdSortable(sortable):
+	heldSortable = sortable
+	
