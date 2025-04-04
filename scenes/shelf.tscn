@@ -7,6 +7,7 @@
 size = Vector2(26, 16)
 
 [node name="Shelf" type="Node2D"]
+scale = Vector2(4, 4)
 script = ExtResource("1_xj574")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

@@ -1,6 +1,7 @@
 extends Node2D
 
 var isFollowingMouse = false
+var grabable = false
 var target = Vector2.ZERO
 var speed = 5
 var velocity
@@ -36,10 +37,19 @@ func drop():
 		
 	
 func grab():
-	isFollowingMouse = true
+	if grabable:
+		isFollowingMouse = true
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	hoveringArea = area
 
 func _on_area_2d_area_exited(_area: Area2D) -> void:
 	hoveringArea = null
+
+
+func _on_area_2d_mouse_entered() -> void:
+	grabable = true
+
+
+func _on_area_2d_mouse_exited() -> void:
+	grabable = false
