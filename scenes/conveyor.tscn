@@ -1,3 +1,34 @@
-[gd_scene format=3 uid="uid://b5rb3vco0eqhs"]
+[gd_scene load_steps=5 format=3 uid="uid://b5rb3vco0eqhs"]
+
+[ext_resource type="Script" uid="uid://dkjqu71nx3jqu" path="res://scripts/conveyor.gd" id="1_y326v"]
+
+[sub_resource type="Curve2D" id="Curve2D_y326v"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 500, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 2
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mfjcm"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kqxj7"]
 
 [node name="Conveyor" type="Node2D"]
+script = ExtResource("1_y326v")
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_y326v")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(500, 0)
+rotation = 3.14159
+loop = false
+
+[node name="despawner" type="Area2D" parent="."]
+
+[node name="despawnerCollider" type="CollisionShape2D" parent="despawner"]
+shape = SubResource("CircleShape2D_mfjcm")
+
+[node name="spawner" type="Area2D" parent="."]
+
+[node name="spawnerCollider" type="CollisionShape2D" parent="spawner"]
+shape = SubResource("CircleShape2D_kqxj7")

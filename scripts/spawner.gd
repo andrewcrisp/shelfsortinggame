@@ -8,7 +8,7 @@ func _on_button_pressed() -> void:
 func SpawnNewSortable():
 	var newsortable = sortable.instantiate()
 	newsortable.position = global_position
-	newsortable.scale = Vector2(4,4)	
+	newsortable.scale = Vector2(4,4)
 	get_tree().get_root().get_node("Level").add_child(newsortable)
 
 func _ready() -> void:
