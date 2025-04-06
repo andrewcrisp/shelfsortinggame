@@ -6,6 +6,8 @@ func _on_button_pressed() -> void:
 	SpawnNewSortable()
 
 func SpawnNewSortable():
+	if sortable == null:
+		sortable = load("res://scenes/sortable_item.tscn")
 	var newsortable = sortable.instantiate()
 	newsortable.position = global_position
 	newsortable.scale = Vector2(4,4)	
