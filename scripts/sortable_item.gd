@@ -49,9 +49,9 @@ func drop():
 	
 func tryGrab():
 	var level = get_tree().get_root().get_node("Level")
-	if !lastArea == null:
-		lastArea.get_parent().remove_sortable()
 	if level.carriedSortable == null && grabable:
+		if !lastArea == null:
+			lastArea.get_parent().remove_sortable()
 		z_index = 1000
 		isFollowingMouse = true
 		level.hold_sortable($".")
