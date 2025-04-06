@@ -7,7 +7,6 @@ var spots: Array
 
 func _process(delta: float) -> void:
 	$Path2D/PathFollow2D.h_offset += 50 * delta	
-		
 	if spots.is_empty():
 		SpawnSpot()
 	#else:
@@ -16,8 +15,7 @@ func _process(delta: float) -> void:
 func _ready() -> void:
 	spot = preload("res://scenes/spot.tscn")
 	var curve:Curve2D = $Path2D.curve
-	var startPosition = curve.get_point_position(0)
-	$spawner.position = startPosition
+	$spawner.position = curve.get_point_position(0)
 	print("Spawner global position " + str($spawner.global_position))
 	$despawner.position = curve.get_point_position(1)
 	print("Despawner global position " + str($despawner.global_position))

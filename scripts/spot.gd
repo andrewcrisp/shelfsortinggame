@@ -5,6 +5,10 @@ signal item_dropped(spot)
 
 var heldSortable = null
 
+func _process(delta: float) -> void:
+	if ! heldSortable == null:
+		heldSortable.global_position = global_position
+
 func hold_sortable(sortable):
 	heldSortable = sortable
 	

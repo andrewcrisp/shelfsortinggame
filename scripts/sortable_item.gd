@@ -37,18 +37,20 @@ func drop():
 	if lastHoveredArea != null \
 	&& $Area2D.overlaps_area(lastHoveredArea) \
 	&& lastHoveredArea.get_parent().heldSortable == null :
-		position = lastHoveredArea.global_position
+		global_position = lastHoveredArea.global_position
 		if lastArea != null:
 			lastArea.get_parent().remove_sortable()
 		lastArea = lastHoveredArea
 		lastHoveredArea.get_parent().hold_sortable($".")
 	elif lastArea != null:
-		position = lastArea.global_position
+		lastArea.get_parent().hold_sortable($".")
+		
 		
 	
 func tryGrab():
 	var level = get_tree().get_root().get_node("Level")
-	
+	if !lastArea == null:
+		lastArea.get_parent().remove_sortable()
 	if level.carriedSortable == null && grabable:
 		z_index = 1000
 		isFollowingMouse = true
