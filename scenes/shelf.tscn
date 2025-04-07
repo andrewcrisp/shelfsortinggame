@@ -16,3 +16,10 @@ scale = Vector2(4, 4)
 [node name="Spot3" parent="." instance=ExtResource("1_eyi4x")]
 position = Vector2(200, 0)
 scale = Vector2(4, 4)
+
+[connection signal="item_dropped" from="Spot" to="." method="_on_spot_item_dropped"]
+[connection signal="item_held" from="Spot" to="." method="_on_spot_item_held"]
+[connection signal="item_dropped" from="Spot2" to="." method="_on_spot_item_dropped"]
+[connection signal="item_held" from="Spot2" to="." method="_on_spot_item_held"]
+[connection signal="item_dropped" from="Spot3" to="." method="_on_spot_item_dropped"]
+[connection signal="item_held" from="Spot3" to="." method="_on_spot_item_held"]

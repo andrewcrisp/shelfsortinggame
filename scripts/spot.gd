@@ -11,6 +11,8 @@ func _process(delta: float) -> void:
 
 func hold_item(item):
 	heldItem = item
+	item_held.emit($".")
 	
 func remove_item():
 	heldItem = null
+	item_dropped.emit($".")
