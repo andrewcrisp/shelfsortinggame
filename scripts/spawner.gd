@@ -1,16 +1,18 @@
 extends Node2D
-var sortable
+var item
 var level
 
-func _on_button_pressed() -> void:
-	SpawnNewSortable()
+var scenes = []
 
-func SpawnNewSortable():
-	var newsortable = sortable.instantiate()
-	newsortable.position = global_position
-	newsortable.scale = Vector2(4,4)
-	get_tree().get_root().get_node("Level").add_child(newsortable)
+func _on_button_pressed() -> void:
+	SpawnnewItem()
+
+func SpawnnewItem():
+	var newItem = item.instantiate()
+	newItem.position = global_position
+	newItem.scale = Vector2(4,4)
+	get_tree().get_root().get_node("Level").add_child(newItem)
 
 func _ready() -> void:
-	sortable = preload("res://scenes/sortable_item.tscn")
+	item = preload("res://scenes/peach.tscn")
 	

@@ -3,14 +3,14 @@ extends Node2D
 signal item_held(spot)
 signal item_dropped(spot)
 
-var heldSortable = null
+var heldItem = null
 
 func _process(delta: float) -> void:
-	if ! heldSortable == null:
-		heldSortable.global_position = global_position
+	if ! heldItem == null:
+		heldItem.global_position = global_position
 
-func hold_sortable(sortable):
-	heldSortable = sortable
+func hold_item(item):
+	heldItem = item
 	
-func remove_sortable():
-	heldSortable = null
+func remove_item():
+	heldItem = null

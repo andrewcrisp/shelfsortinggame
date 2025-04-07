@@ -10,9 +10,6 @@ var lastHoveredArea = null
 var currentArea = null
 var lastArea = null
 
-func _ready():
-	pass
-	
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("click"):
 		handleClick()
@@ -21,7 +18,7 @@ func _process(_delta: float) -> void:
 		move()
 		
 func move():
-	position = get_global_mouse_position()
+	get_parent().position = get_global_mouse_position()
 
 func handleClick():
 	if isFollowingMouse:
@@ -35,15 +32,15 @@ func drop():
 	isFollowingMouse = false
 	z_index = 500
 	if lastHoveredArea != null \
-	&& $Area2D.overlaps_area(lastHoveredArea) \
+	&& get_parent().get_node("Area2D").overlaps_area(lastHoveredArea) \
 	&& lastHoveredArea.get_parent().heldItem == null :
 		global_position = lastHoveredArea.global_position
 		if lastArea != null:
 			lastArea.get_parent().remove_item()
 		lastArea = lastHoveredArea
-		lastHoveredArea.get_parent().hold_item($".")
+		lastHoveredArea.get_parent().hold_item(get_parent())
 	elif lastArea != null:
-		lastArea.get_parent().hold_item($".")
+		lastArea.get_parent().hold_item(get_parent())
 		
 		
 	
@@ -54,7 +51,7 @@ func tryGrab():
 			lastArea.get_parent().remove_item()
 		z_index = 1000
 		isFollowingMouse = true
-		level.hold_item($".")
+		level.hold_item(get_parent())
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	lastHoveredArea = area

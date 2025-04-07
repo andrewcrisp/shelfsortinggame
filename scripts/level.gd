@@ -1,9 +1,9 @@
 extends Node2D
 
-var carriedSortable = null
+var carriedItem = null
 
-func drop_sortable():
-	carriedSortable = null
+func drop_item():
+	carriedItem = null
 	
-func hold_sortable(sortable):
-	carriedSortable = sortable
+func hold_item(item):
+	carriedItem = item
