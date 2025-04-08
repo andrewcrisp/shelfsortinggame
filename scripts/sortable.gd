@@ -30,7 +30,7 @@ func drop():
 	var level = get_tree().get_root().get_node("Level")
 	level.drop_item()
 	isFollowingMouse = false
-	z_index = 500
+	z_index = Globals.z_levels["placed_item"]
 	if lastHoveredArea != null \
 	&& get_parent().get_node("Area2D").overlaps_area(lastHoveredArea) \
 	&& lastHoveredArea.get_parent().heldItem == null :
@@ -49,7 +49,7 @@ func tryGrab():
 	if level.carriedItem == null && grabable:
 		if !lastArea == null:
 			lastArea.get_parent().remove_item()
-		z_index = 1000
+		z_index = Globals.z_levels["held_item"]
 		isFollowingMouse = true
 		level.hold_item(get_parent())
 
