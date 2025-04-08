@@ -4,6 +4,7 @@ var spot
 
 var maxSpots: int = 3
 var spots: Array
+var spawner = null
 
 func _process(delta: float) -> void:
 	$Path2D/PathFollow2D.h_offset += 50 * delta	
@@ -31,8 +32,6 @@ func SpawnSpot():
 	spots.append(newspot)
 
 func _on_despawner_entered(area: Area2D):
-	print("Despawner hit")
-	print("moving to " + str($spawner.global_position))
 	area.get_parent().global_position = $spawner.global_position
-	print("moved to " + str(area.global_position))
-	
+	if area.get_parent().heldItem == null:
+		pass
