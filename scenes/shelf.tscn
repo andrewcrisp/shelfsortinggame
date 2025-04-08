@@ -6,7 +6,7 @@
 [node name="Shelf" type="Node2D"]
 script = ExtResource("1_xj574")
 
-[node name="Spot" parent="." instance=ExtResource("1_eyi4x")]
+[node name="Spot1" parent="." instance=ExtResource("1_eyi4x")]
 scale = Vector2(4, 4)
 
 [node name="Spot2" parent="." instance=ExtResource("1_eyi4x")]
@@ -16,10 +16,3 @@ scale = Vector2(4, 4)
 [node name="Spot3" parent="." instance=ExtResource("1_eyi4x")]
 position = Vector2(200, 0)
 scale = Vector2(4, 4)
-
-[connection signal="item_dropped" from="Spot" to="." method="_on_spot_item_dropped"]
-[connection signal="item_held" from="Spot" to="." method="_on_spot_item_held"]
-[connection signal="item_dropped" from="Spot2" to="." method="_on_spot_item_dropped"]
-[connection signal="item_held" from="Spot2" to="." method="_on_spot_item_held"]
-[connection signal="item_dropped" from="Spot3" to="." method="_on_spot_item_dropped"]
-[connection signal="item_held" from="Spot3" to="." method="_on_spot_item_held"]

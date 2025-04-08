@@ -1,7 +1,7 @@
 extends Node2D
 
-signal item_held(spot)
-signal item_dropped(spot)
+signal item_placed(spot)
+signal item_removed(spot)
 
 var heldItem = null
 
@@ -11,8 +11,8 @@ func _process(delta: float) -> void:
 
 func hold_item(item):
 	heldItem = item
-	item_held.emit($".")
+	item_placed.emit($".")
 	
 func remove_item():
 	heldItem = null
-	item_dropped.emit($".")
+	item_removed.emit($".")

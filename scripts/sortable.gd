@@ -44,8 +44,6 @@ func drop():
 		lastHoveredArea.get_parent().hold_item(get_parent())
 	elif lastArea != null:
 		lastArea.get_parent().hold_item(get_parent())
-		
-		
 	
 func tryGrab():
 	if level.carriedItem == null && grabable:
