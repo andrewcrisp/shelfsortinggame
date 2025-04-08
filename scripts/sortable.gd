@@ -1,5 +1,6 @@
 extends Node2D
 
+var level
 var isFollowingMouse = false
 var grabable = false
 var target = Vector2.ZERO
@@ -10,6 +11,9 @@ var lastHoveredArea = null
 var currentArea = null
 var lastArea = null
 
+func _ready() -> void:
+	level = get_tree().get_root().get_node("Level")
+	
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("click"):
 		handleClick()
@@ -27,7 +31,6 @@ func handleClick():
 		tryGrab()
 
 func drop():
-	var level = get_tree().get_root().get_node("Level")
 	level.drop_item()
 	isFollowingMouse = false
 	z_index = Globals.z_levels["placed_item"]
@@ -45,7 +48,6 @@ func drop():
 		
 	
 func tryGrab():
-	var level = get_tree().get_root().get_node("Level")
 	if level.carriedItem == null && grabable:
 		if !lastArea == null:
 			lastArea.get_parent().remove_item()
