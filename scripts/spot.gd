@@ -16,3 +16,7 @@ func hold_item(item):
 func remove_item():
 	heldItem = null
 	item_removed.emit($".")
+	
+func score_item():
+	heldItem.queue_free()
+	remove_item()

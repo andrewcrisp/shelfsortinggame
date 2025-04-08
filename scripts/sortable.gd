@@ -38,8 +38,8 @@ func drop():
 	&& get_parent().get_node("Area2D").overlaps_area(lastHoveredArea) \
 	&& lastHoveredArea.get_parent().heldItem == null :
 		global_position = lastHoveredArea.global_position
-		if lastArea != null:
-			lastArea.get_parent().remove_item()
+		#if lastArea != null:
+			#lastArea.get_parent().remove_item()
 		lastArea = lastHoveredArea
 		lastHoveredArea.get_parent().hold_item(get_parent())
 	elif lastArea != null:
