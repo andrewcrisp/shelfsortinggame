@@ -16,6 +16,7 @@ func _process(delta: float) -> void:
 
 func hold_item(item):
 	heldItem = item
+	item.get_node("sortable").lastArea = $Area2D
 	item_placed.emit($".")
 	
 func remove_item():

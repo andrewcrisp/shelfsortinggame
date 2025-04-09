@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://duxdyd7lkrwli"]
 
-[ext_resource type="PackedScene" uid="uid://cvjhx3ftchjyy" path="res://scenes/spawner.tscn" id="2_7snjs"]
+[ext_resource type="Script" uid="uid://wx4w5n85nf6t" path="res://scenes/spawn_button.gd" id="1_ghwsi"]
 
 [node name="Spawn_button" type="Node2D"]
 
@@ -8,8 +8,7 @@
 offset_right = 8.0
 offset_bottom = 8.0
 text = "SPAWN"
-
-[node name="spawner" parent="Button" instance=ExtResource("2_7snjs")]
+script = ExtResource("1_ghwsi")
 
 [connection signal="ready" from="." to="." method="_on_ready"]
-[connection signal="pressed" from="Button" to="Button/spawner" method="_on_button_pressed"]
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

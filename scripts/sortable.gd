@@ -3,13 +3,9 @@ extends Node2D
 var level
 var isFollowingMouse = false
 var grabable = false
-var target = Vector2.ZERO
-var speed = 5
-var velocity
-#var hoveringArea
+var lastArea = null
 var lastHoveredArea = null
 var currentArea = null
-var lastArea = null
 
 func _ready() -> void:
 	level = get_tree().get_root().get_node("Level")

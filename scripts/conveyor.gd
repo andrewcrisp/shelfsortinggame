@@ -5,6 +5,7 @@ var spot
 var maxSpots: int = 3
 var spots: Array
 var spawner = null
+var item_spawner
 
 func _process(delta: float) -> void:
 	$Path2D/PathFollow2D.h_offset += 50 * delta	
@@ -17,9 +18,9 @@ func _ready() -> void:
 	spot = preload("res://scenes/spot.tscn")
 	var curve:Curve2D = $Path2D.curve
 	$spawner.position = curve.get_point_position(0)
-	print("Spawner global position " + str($spawner.global_position))
 	$despawner.position = curve.get_point_position(1)
-	print("Despawner global position " + str($despawner.global_position))
+	item_spawner = get_tree().get_root().get_node("Level").get_node("item_spawner")
+	
 	
 func SpawnSpot():
 	var newspot = spot.instantiate()
@@ -32,6 +33,9 @@ func SpawnSpot():
 	spots.append(newspot)
 
 func _on_despawner_entered(area: Area2D):
-	area.get_parent().global_position = $spawner.global_position
-	if area.get_parent().heldItem == null:
-		pass
+	var spot = area.get_parent()
+	spot.global_position = $spawner.global_position
+	if spot.heldItem == null:
+		var item = item_spawner.SpawnNewItem()
+		item.position = spot.global_position
+		spot.hold_item(item)
