@@ -9,6 +9,13 @@ var currentArea = null
 
 func _ready() -> void:
 	level = get_tree().get_root().get_node("Level")
+	var sprite:Sprite2D = get_parent().get_node("Sprite2D")
+	
+	var spriteSize = sprite.region_rect.size
+	var colshape:CollisionShape2D = get_parent().get_node("Area2D/CollisionShape2D")
+	var rect: RectangleShape2D = colshape.shape
+	rect.size = spriteSize
+	print(str(spriteSize))
 	
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("click"):

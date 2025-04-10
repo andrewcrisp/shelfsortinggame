@@ -4,7 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://ejbp63rjx3ir" path="res://scenes/sortable.tscn" id="2_3qwa8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qe1dv"]
-size = Vector2(14, 16)
 
 [node name="peach" type="Node2D"]
 
@@ -13,7 +12,7 @@ texture = ExtResource("1_qe1dv")
 region_enabled = true
 region_rect = Rect2(82, 17, 12, 13)
 
-[node name="Area2D" type="Area2D" parent="." groups=["fruit"]]
+[node name="Area2D" type="Area2D" parent="."]
 z_index = 1
 collision_layer = 2
 
