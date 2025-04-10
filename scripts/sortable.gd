@@ -14,8 +14,7 @@ func _ready() -> void:
 	var spriteSize = sprite.region_rect.size
 	var colshape:CollisionShape2D = get_parent().get_node("Area2D/CollisionShape2D")
 	var rect: RectangleShape2D = colshape.shape
-	rect.size = spriteSize
-	print(str(spriteSize))
+	rect.size = spriteSize * 1.1
 	
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("click"):

@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://colio1la8bs1b" path="res://scripts/spot.gd" id="1_xj574"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eyi4x"]
-size = Vector2(26, 16)
+size = Vector2(33, 21)
 
 [node name="Spot" type="Node2D"]
 script = ExtResource("1_xj574")
@@ -18,4 +18,5 @@ region_rect = Rect2(52, 82, 24, 13)
 collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-0.5, -0.5)
 shape = SubResource("RectangleShape2D_eyi4x")
