@@ -6,7 +6,7 @@ var z_levels = {
 	"placed_item" = 500
 }
 
-var fruit = []
+var groceries = []
 
 func _ready() -> void:
-	fruit.append("res://scenes/peach.tscn")
+	groceries.append("res://scenes/peach.tscn")
