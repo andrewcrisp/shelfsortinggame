@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://dwpaft2txvna5"]
+
+[ext_resource type="Texture2D" uid="uid://bwcoy7g0bur1j" path="res://assets/Basic_Plants.png" id="1_na7wy"]
+[ext_resource type="PackedScene" uid="uid://ejbp63rjx3ir" path="res://scenes/sortable.tscn" id="2_sd28k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qe1dv"]
+
+[node name="peach" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_na7wy")
+region_enabled = true
+region_rect = Rect2(80, 0, 15, 15)
+
+[node name="Area2D" type="Area2D" parent="."]
+z_index = 1
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_qe1dv")
+
+[node name="sortable" parent="." instance=ExtResource("2_sd28k")]
+
+[connection signal="area_entered" from="Area2D" to="sortable" method="_on_area_2d_area_entered"]
+[connection signal="mouse_entered" from="Area2D" to="sortable" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="sortable" method="_on_area_2d_mouse_exited"]
