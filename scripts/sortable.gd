@@ -19,21 +19,20 @@ func _ready() -> void:
 	var rect: RectangleShape2D = colshape.shape
 	rect.size = spriteSize * 1.1
 	
+func _input(event: InputEvent) -> void:
+	if event is InputEventMouseButton:
+		if event.pressed:
+			tryGrab()
+		else:
+			if isFollowingMouse:
+				drop()
+
 func _process(_delta: float) -> void:
-	if Input.is_action_just_pressed("click"):
-		handleClick()
-			
 	if isFollowingMouse:
 		move()
-		
+		#
 func move():
 	get_parent().position = get_global_mouse_position()
-
-func handleClick():
-	if isFollowingMouse:
-		drop()
-	else:
-		tryGrab()
 
 func drop():
 	level.drop_item()
