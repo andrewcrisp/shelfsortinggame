@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://b5rb3vco0eqhs"]
+[gd_scene load_steps=6 format=3 uid="uid://b5rb3vco0eqhs"]
 
 [ext_resource type="Script" uid="uid://dkjqu71nx3jqu" path="res://scripts/conveyor.gd" id="1_y326v"]
+[ext_resource type="PackedScene" uid="uid://dkbqxgkjy5dog" path="res://scenes/spot.tscn" id="2_y326v"]
 
 [sub_resource type="Curve2D" id="Curve2D_y326v"]
 _data = {
@@ -22,6 +23,28 @@ curve = SubResource("Curve2D_y326v")
 position = Vector2(800, 0)
 rotation = 3.14159
 loop = false
+
+[node name="Spot" parent="Path2D/PathFollow2D" instance=ExtResource("2_y326v")]
+rotation = 3.14159
+scale = Vector2(4, 4)
+
+[node name="PathFollow2D2" type="PathFollow2D" parent="Path2D"]
+position = Vector2(800, 0)
+rotation = 3.14159
+loop = false
+
+[node name="Spot" parent="Path2D/PathFollow2D2" instance=ExtResource("2_y326v")]
+rotation = 3.14159
+scale = Vector2(4, 4)
+
+[node name="PathFollow2D3" type="PathFollow2D" parent="Path2D"]
+position = Vector2(800, 0)
+rotation = 3.14159
+loop = false
+
+[node name="Spot" parent="Path2D/PathFollow2D3" instance=ExtResource("2_y326v")]
+rotation = 3.14159
+scale = Vector2(4, 4)
 
 [node name="despawner" type="Area2D" parent="."]
 
