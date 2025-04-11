@@ -1,11 +1,14 @@
 extends Node2D
 
+class_name Sortable
+
 var level
 var isFollowingMouse = false
 var grabable = false
 var lastArea = null
 var lastHoveredArea = null
 var currentArea = null
+var type = "untyped"
 
 func _ready() -> void:
 	level = get_tree().get_root().get_node("Level")
