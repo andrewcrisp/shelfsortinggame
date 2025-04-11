@@ -14,20 +14,17 @@ script = ExtResource("1_xj574")
 
 [node name="Spot1" parent="." instance=ExtResource("1_eyi4x")]
 rotation = 1.5708
-scale = Vector2(2, 4)
-skew = 0.244346
+scale = Vector2(2, 3)
 
 [node name="Spot2" parent="." instance=ExtResource("1_eyi4x")]
 position = Vector2(90, 0)
 rotation = 1.5708
-scale = Vector2(2, 4)
-skew = 0.244346
+scale = Vector2(2, 3)
 
 [node name="Spot3" parent="." instance=ExtResource("1_eyi4x")]
 position = Vector2(180, 0)
 rotation = 1.5708
-scale = Vector2(2, 4)
-skew = 0.244346
+scale = Vector2(2, 3)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = -1

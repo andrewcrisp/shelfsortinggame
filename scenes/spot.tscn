@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://colio1la8bs1b" path="res://scripts/spot.gd" id="1_xj574"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eyi4x"]
-size = Vector2(33, 21)
+size = Vector2(23.3333, 21)
 
 [node name="Spot" type="Node2D"]
 script = ExtResource("1_xj574")
