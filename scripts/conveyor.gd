@@ -6,14 +6,13 @@ var maxSpots: int = 3
 var spots: Array
 var spawner = null
 var item_spawner
+var velocity = 100
 
 func _process(delta: float) -> void:
-	$Path2D/PathFollow2D.h_offset += 50 * delta	
+	$Path2D/PathFollow2D.h_offset += velocity * delta	
 	if spots.is_empty():
 		SpawnSpot()
-	#else:
-		#print(str(spots[0].position))
-		
+
 func _ready() -> void:
 	spot = preload("res://scenes/spot.tscn")
 	var curve:Curve2D = $Path2D.curve
