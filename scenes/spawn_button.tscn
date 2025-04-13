@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://duxdyd7lkrwli"]
 
-[ext_resource type="Script" uid="uid://wx4w5n85nf6t" path="res://scenes/spawn_button.gd" id="1_ghwsi"]
+[ext_resource type="Script" uid="uid://wx4w5n85nf6t" path="res://scripts/spawn_button.gd" id="1_ghwsi"]
 
 [node name="Spawn_button" type="Node2D"]
 

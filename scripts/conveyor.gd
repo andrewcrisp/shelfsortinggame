@@ -4,7 +4,7 @@ var maxSpots: int = 3
 var spots: Array
 var spawner = null
 var item_spawner
-var velocity = 100
+var velocity = 50 #100
 
 func _process(delta: float) -> void:
 	$Path2D/PathFollow2D.h_offset += velocity * delta
@@ -27,6 +27,9 @@ func _ready() -> void:
 func _on_despawner_entered(area: Area2D):
 	var spot = area.get_parent()
 	spot.global_position = $spawner.global_position
+	#addItem(spot)
+	
+func addItem(spot):
 	if spot.heldItem == null:
 		var item = item_spawner.SpawnNewItem()
 		item.position = spot.global_position
