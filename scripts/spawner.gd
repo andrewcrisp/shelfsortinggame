@@ -11,7 +11,7 @@ func SpawnNewItem():
 	var item = scenes[RandomNumberGenerator.new().randi() % len(scenes)]
 	var newItem = item.instantiate()
 	newItem.type = item
-	newItem.scale = Vector2(4,4)
+	#newItem.scale = Vector2(4,4)
 	get_tree().get_root().get_node("Level").add_child(newItem)
 	return newItem
 

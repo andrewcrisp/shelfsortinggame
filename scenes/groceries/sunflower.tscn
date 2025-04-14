@@ -16,4 +16,4 @@ shape = SubResource("RectangleShape2D_5mufi")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_boem4")
 region_enabled = true
-region_rect = Rect2(51, 0, 11, 16)
+region_rect = Rect2(48, 0, 16, 16)

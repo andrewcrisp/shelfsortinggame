@@ -1,26 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://dwpaft2txvna5"]
+[gd_scene load_steps=4 format=3 uid="uid://7ytftopkdyni"]
 
-[ext_resource type="Texture2D" uid="uid://bwcoy7g0bur1j" path="res://assets/Basic_Plants.png" id="1_na7wy"]
-[ext_resource type="PackedScene" uid="uid://ejbp63rjx3ir" path="res://scenes/sortable.tscn" id="2_sd28k"]
+[ext_resource type="Script" uid="uid://nfy7ub0kmvu6" path="res://scripts/sortable_item.gd" id="1_na7wy"]
+[ext_resource type="Texture2D" uid="uid://bwcoy7g0bur1j" path="res://assets/Basic_Plants.png" id="2_sd28k"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qe1dv"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5mufi"]
 
-[node name="wheat" type="Node2D"]
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_na7wy")
-region_enabled = true
-region_rect = Rect2(80, 0, 15, 15)
+[node name="SortableItem" type="Node2D"]
+script = ExtResource("1_na7wy")
 
 [node name="Area2D" type="Area2D" parent="."]
-z_index = 1
-collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("RectangleShape2D_qe1dv")
+shape = SubResource("RectangleShape2D_5mufi")
 
-[node name="sortable" parent="." instance=ExtResource("2_sd28k")]
-
-[connection signal="area_entered" from="Area2D" to="sortable" method="_on_area_2d_area_entered"]
-[connection signal="mouse_entered" from="Area2D" to="sortable" method="_on_area_2d_mouse_entered"]
-[connection signal="mouse_exited" from="Area2D" to="sortable" method="_on_area_2d_mouse_exited"]
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_sd28k")
+region_enabled = true
+region_rect = Rect2(80, 0, 15, 15)

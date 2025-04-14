@@ -25,9 +25,9 @@ func _on_spot_item_removed(spot: Variant) -> void:
 
 func doCheckForScore():
 	#print($spot1.heldItem.get_groups())
-	if ($Spot1.heldItem != null
-	&& $Spot2.heldItem != null
-	&& $Spot3.heldItem != null
+	if ($Spot1.isHoldingItem()
+	&& $Spot2.isHoldingItem()
+	&& $Spot3.isHoldingItem()
 	&& $Spot1.heldItem.type == $Spot2.heldItem.type
 	&& $Spot1.heldItem.type == $Spot3.heldItem.type
 	):

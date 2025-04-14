@@ -18,6 +18,9 @@ func hold_item(item):
 	heldItem = item
 	item.lastArea = $Area2D
 	item_placed.emit($".")
+
+func isHoldingItem():
+	return heldItem != null
 	
 func remove_item():
 	heldItem = null
