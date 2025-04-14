@@ -32,18 +32,19 @@ func _physics_process(delta: float) -> void:
 		global_position = dragposition
 
 func drop():
-	isFollowingMouse = false
-	level.drop_item()
-	
-	z_index = Globals.z_levels["placed_item"]
-	if (hoveredArea != null
-	&& $"Area2D".overlaps_area(hoveredArea)
-	&& hoveredArea.get_parent().heldItem == null) :
-		global_position = hoveredArea.global_position
-		lastArea = hoveredArea
-		hoveredArea.get_parent().hold_item($".")
-	elif lastArea != null:
-		lastArea.get_parent().hold_item($".")
+	if isFollowingMouse:
+		isFollowingMouse = false
+		level.drop_item()
+		
+		z_index = Globals.z_levels["placed_item"]
+		if (hoveredArea != null
+		&& $"Area2D".overlaps_area(hoveredArea)
+		&& hoveredArea.get_parent().heldItem == null) :
+			global_position = hoveredArea.global_position
+			lastArea = hoveredArea
+			hoveredArea.get_parent().hold_item($".")
+		elif lastArea != null:
+			lastArea.get_parent().hold_item($".")
 	
 	
 func tryGrab():

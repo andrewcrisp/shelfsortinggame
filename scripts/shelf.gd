@@ -28,8 +28,8 @@ func doCheckForScore():
 	if ($Spot1.heldItem != null
 	&& $Spot2.heldItem != null
 	&& $Spot3.heldItem != null
-	&& $Spot1.heldItem.get_node("sortable").type == $Spot2.heldItem.get_node("sortable").type
-	&& $Spot1.heldItem.get_node("sortable").type == $Spot3.heldItem.get_node("sortable").type
+	&& $Spot1.heldItem.type == $Spot2.heldItem.type
+	&& $Spot1.heldItem.type == $Spot3.heldItem.type
 	):
 		
 		print("SCORE")
