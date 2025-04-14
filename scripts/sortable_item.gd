@@ -49,8 +49,8 @@ func drop():
 	
 func tryGrab():
 	if level.carriedItem == null && mouse_in:
-		#if !lastArea == null:
-			#lastArea.get_parent().remove_item()
+		if !lastArea == null:
+			lastArea.get_parent().remove_item()
 		z_index = Globals.z_levels["held_item"]
 		isFollowingMouse = true
 		level.hold_item($".")
