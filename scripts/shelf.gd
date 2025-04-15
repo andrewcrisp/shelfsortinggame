@@ -1,6 +1,6 @@
 extends Node2D
 
-signal score
+signal score(points)
 
 var numItemsHeld = 0
 
@@ -36,3 +36,7 @@ func doCheckForScore():
 		$Spot1.score_item()
 		$Spot2.score_item()
 		$Spot3.score_item()
+
+
+func _on_spot_scored(points: Variant) -> void:
+	score.emit(points)

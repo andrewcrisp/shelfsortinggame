@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://botafqrb248p7"]
+
+[ext_resource type="Script" uid="uid://bw0xa6hnbpimj" path="res://scripts/level.gd" id="1_de24i"]
+[ext_resource type="PackedScene" uid="uid://cvjhx3ftchjyy" path="res://scenes/item_spawner.tscn" id="2_emed8"]
+[ext_resource type="PackedScene" uid="uid://bd1b7yuh7jh1n" path="res://scenes/shelf.tscn" id="3_nw4g8"]
+[ext_resource type="PackedScene" uid="uid://b5rb3vco0eqhs" path="res://scenes/conveyor.tscn" id="4_u2ksi"]
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_de24i")
+
+[node name="item_spawner" parent="." instance=ExtResource("2_emed8")]
+
+[node name="Shelf" parent="." instance=ExtResource("3_nw4g8")]
+position = Vector2(75, 50)
+
+[node name="Shelf2" parent="." instance=ExtResource("3_nw4g8")]
+position = Vector2(370, 50)
+
+[node name="Shelf3" parent="." instance=ExtResource("3_nw4g8")]
+position = Vector2(75, 370)
+
+[node name="Shelf4" parent="." instance=ExtResource("3_nw4g8")]
+position = Vector2(370, 150)
+
+[node name="Shelf5" parent="." instance=ExtResource("3_nw4g8")]
+position = Vector2(75, 150)
+
+[node name="Shelf6" parent="." instance=ExtResource("3_nw4g8")]
+position = Vector2(370, 370)
+
+[node name="Conveyor" parent="." instance=ExtResource("4_u2ksi")]
+position = Vector2(-110, 276)

@@ -32,3 +32,5 @@ position = Vector2(90.5, 6)
 rotation = -1.5708
 scale = Vector2(0.8125, 3.92188)
 texture = SubResource("GradientTexture2D_00mi8")
+
+[connection signal="spot_scored" from="Spot1" to="." method="_on_spot_scored"]

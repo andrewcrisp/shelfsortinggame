@@ -1,4 +1,4 @@
-extends Node2D
+class_name Item_Spawner extends Node2D
 
 var level
 
@@ -11,8 +11,8 @@ func SpawnNewItem():
 	var item = scenes[RandomNumberGenerator.new().randi() % len(scenes)]
 	var newItem = item.instantiate()
 	newItem.type = item
-	#newItem.scale = Vector2(4,4)
-	get_tree().get_root().get_node("Level").add_child(newItem)
+	newItem.scale = Vector2(3,3)
+	Globals.game.currentLevel.add_child(newItem)
 	return newItem
 
 func _ready() -> void:

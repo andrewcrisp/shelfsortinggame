@@ -7,9 +7,6 @@ signal spot_scored(points)
 var heldItem = null
 var scoreboard = null
 
-func _ready() -> void:
-	scoreboard = get_tree().get_root().get_node("Level").get_node("Score")
-
 func _process(delta: float) -> void:
 	if ! heldItem == null:
 		heldItem.global_position = global_position
@@ -29,4 +26,4 @@ func remove_item():
 func score_item():
 	heldItem.queue_free()
 	remove_item()
-	scoreboard.score_item(1)
+	spot_scored.emit(1)

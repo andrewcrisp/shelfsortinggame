@@ -1,6 +1,5 @@
 extends Node2D
 
-var level
 var type = "untyped"
 var isFollowingMouse = false
 var dragposition = 0
@@ -9,7 +8,6 @@ var hoveredArea = null
 var mouse_in = false
 	
 func _ready() -> void:
-	level = get_tree().get_root().get_node("Level")
 	$"Area2D/CollisionShape2D".shape.size = $Sprite2D.region_rect.size * 1.1
 	$Area2D.connect("mouse_entered", _on_area_2d_mouse_entered)
 	$Area2D.connect("mouse_exited", _on_area_2d_mouse_exited)
@@ -34,7 +32,7 @@ func _physics_process(delta: float) -> void:
 func drop():
 	if isFollowingMouse:
 		isFollowingMouse = false
-		level.drop_item()
+		Globals.game.currentLevel.drop_item()
 		
 		z_index = Globals.z_levels["placed_item"]
 		if (hoveredArea != null
@@ -45,15 +43,14 @@ func drop():
 			hoveredArea.get_parent().hold_item($".")
 		elif lastArea != null:
 			lastArea.get_parent().hold_item($".")
-	
-	
+		
 func tryGrab():
-	if level.carriedItem == null && mouse_in:
+	if Globals.game.currentLevel.carriedItem == null && mouse_in:
 		if !lastArea == null:
 			lastArea.get_parent().remove_item()
 		z_index = Globals.z_levels["held_item"]
 		isFollowingMouse = true
-		level.hold_item($".")
+		Globals.game.currentLevel.hold_item($".")
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	hoveredArea = area

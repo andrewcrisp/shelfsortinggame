@@ -1,4 +1,4 @@
-extends Control
+class_name Scoreboard extends Control
 
 var score = 0
 

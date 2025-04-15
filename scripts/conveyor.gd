@@ -4,7 +4,7 @@ var maxSpots: int = 3
 var spots: Array
 var spawner = null
 var item_spawner
-var velocity = 200 #100
+var velocity = 100 #100
 
 func _process(delta: float) -> void:
 	$Path2D/PathFollow2D.h_offset += velocity * delta
@@ -16,7 +16,6 @@ func _ready() -> void:
 	$spawner.position = curve.get_point_position(0)
 	$despawner.position = curve.get_point_position(1)
 	$despawner.connect("area_entered", _on_despawner_entered)
-	item_spawner = get_tree().get_root().get_node("Level").get_node("item_spawner")
 	var curveLength = curve.get_baked_length()
 	$Path2D/PathFollow2D.h_offset = curveLength / (maxSpots) * 0
 	$Path2D/PathFollow2D2.h_offset = curveLength / (maxSpots) * 1
