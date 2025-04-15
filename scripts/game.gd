@@ -8,8 +8,6 @@ func _ready() -> void:
 	Globals.scoreboard = $Control/Scoreboard
 	$Control/Menu/StartButton.connect("pressed", on_load_level_button_pressed)
 	
-	#load_level(Globals.levels[0])
-	
 func on_load_level_button_pressed():
 	$Control/Menu/StartButton.visible = false
 	load_level(Globals.levels[0])

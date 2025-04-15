@@ -6,6 +6,7 @@ signal spot_scored(points)
 
 var heldItem = null
 var scoreboard = null
+var points = 1
 
 func _process(delta: float) -> void:
 	if ! heldItem == null:
@@ -26,4 +27,4 @@ func remove_item():
 func score_item():
 	heldItem.queue_free()
 	remove_item()
-	spot_scored.emit(1)
+	Globals.scoreboard.score_item(points)
