@@ -19,6 +19,7 @@ offset_bottom = 40.0
 
 [node name="StartButton" type="Button" parent="Control/Menu"]
 layout_mode = 2
+text = "Load level"
 
 [node name="Scoreboard" parent="Control" instance=ExtResource("2_yqjtg")]
 visible = false
