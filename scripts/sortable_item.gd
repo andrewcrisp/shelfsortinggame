@@ -25,7 +25,7 @@ func _input(event: InputEvent) -> void:
 	if isFollowingMouse:
 		dragposition = event.position
 	
-func _physics_process(delta: float) -> void:
+func _process(delta: float) -> void:
 	if (isFollowingMouse):
 		global_position = dragposition
 

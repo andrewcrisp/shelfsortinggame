@@ -1,10 +1,13 @@
-extends Node2D
+class_name Conveyor extends Node2D
+
+signal itemRequested(spot: Spot)
 
 var maxSpots: int = 3
 var spots: Array
 var spawner = null
-var item_spawner
+var item_spawner: Item_Spawner
 var velocity = 100 #100
+
 
 func _process(delta: float) -> void:
 	$Path2D/PathFollow2D.h_offset += velocity * delta
@@ -21,10 +24,13 @@ func _ready() -> void:
 	$Path2D/PathFollow2D2.h_offset = curveLength / (maxSpots) * 1
 	$Path2D/PathFollow2D3.h_offset = curveLength / (maxSpots) * 2
 	
+	connect("itemRequested", addItem)
+	
 func _on_despawner_entered(area: Area2D):
 	var spot = area.get_parent()
 	spot.global_position = $spawner.global_position
-	addItem(spot) 
+	itemRequested.emit(spot)
+	#addItem(spot)
 	
 func addItem(spot):
 	if !spot.isHoldingItem():

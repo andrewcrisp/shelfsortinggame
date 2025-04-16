@@ -1,4 +1,4 @@
-extends Node2D
+class_name Spot extends Node2D
 
 signal item_placed(spot)
 signal item_removed(spot)
