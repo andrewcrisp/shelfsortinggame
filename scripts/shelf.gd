@@ -14,14 +14,12 @@ func _ready() -> void:
 	$Spot3.connect("item_placed", _on_spot_item_placed)
 	$Spot3.connect("item_removed", _on_spot_item_removed)
 	
-func _on_spot_item_placed(spot: Variant) -> void:
+func _on_spot_item_placed(_spot: Variant) -> void:
 	numItemsHeld += 1
-	print("holding " + str(numItemsHeld) + " items")
 	doCheckForScore()
 
-func _on_spot_item_removed(spot: Variant) -> void:
+func _on_spot_item_removed(_spot: Variant) -> void:
 	numItemsHeld -= 1
-	print("removing item. " + str(numItemsHeld) + " items")
 
 func doCheckForScore():
 	#print($spot1.heldItem.get_groups())

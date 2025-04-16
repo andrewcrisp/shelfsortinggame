@@ -2,13 +2,12 @@ class_name Spot extends Node2D
 
 signal item_placed(spot)
 signal item_removed(spot)
-signal spot_scored(points)
 
 var heldItem = null
 var scoreboard = null
 var points = 1
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if ! heldItem == null:
 		heldItem.global_position = global_position
 
