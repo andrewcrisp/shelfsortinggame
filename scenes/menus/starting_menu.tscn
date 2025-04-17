@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://cb0bwa4vxe8rc"]
+
+[ext_resource type="Script" uid="uid://4jlhnrt30nd2" path="res://scripts/starting_menu.gd" id="1_awdct"]
+
+[node name="Menu" type="VBoxContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_awdct")
+
+[node name="StartButton" type="Button" parent="."]
+layout_mode = 2
+text = "Load level"
