@@ -15,6 +15,6 @@ func on_load_level_button_pressed():
 func load_level(level: String):
 	var nextLevel = load(level).instantiate()
 	currentLevel = nextLevel
-	add_child(currentLevel)
+	$Node2D.add_child(currentLevel)
 	Globals.scoreboard.reset()
 	Globals.scoreboard.visible = true

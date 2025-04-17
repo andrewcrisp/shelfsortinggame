@@ -11,7 +11,7 @@ func SpawnNewItem():
 	var item = scenes[RandomNumberGenerator.new().randi() % len(scenes)]
 	var newItem = item.instantiate()
 	newItem.type = item
-	newItem.scale = Vector2(3,3)
+	newItem.scale = Vector2(6,6)
 	Globals.game.currentLevel.call_deferred("add_child", newItem)
 	return newItem
 
