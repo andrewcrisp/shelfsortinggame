@@ -12,9 +12,10 @@ func _process(_delta: float) -> void:
 		heldItem.global_position = global_position
 
 func hold_item(item):
-	heldItem = item
-	item.lastArea = $Area2D
-	item_placed.emit($".")
+	if (item != null):
+		heldItem = item
+		item.lastArea = $Area2D
+		item_placed.emit($".")
 
 func isHoldingItem():
 	return heldItem != null

@@ -5,7 +5,6 @@ signal itemRequested(spot: Spot)
 var maxSpots: int = 3
 var spots: Array
 var spawner = null
-var item_spawner: Item_Spawner
 var velocity = 100 #100
 
 
@@ -34,6 +33,7 @@ func _on_despawner_entered(area: Area2D):
 	
 func addItem(spot):
 	if !spot.isHoldingItem():
-		var item = item_spawner.SpawnNewItem()
-		item.position = spot.global_position
-		spot.hold_item(item)
+		var item = Globals.itemSpawner.SpawnNewItem()
+		if (item != null):
+			item.position = spot.global_position
+			spot.hold_item(item)

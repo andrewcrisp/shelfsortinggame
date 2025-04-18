@@ -14,6 +14,9 @@ func _ready() -> void:
 	$Spot3.connect("item_placed", _on_spot_item_placed)
 	$Spot3.connect("item_removed", _on_spot_item_removed)
 	
+	add_to_group("shelves")
+	
+	
 func _on_spot_item_placed(_spot: Variant) -> void:
 	numItemsHeld += 1
 	doCheckForScore()
@@ -34,7 +37,18 @@ func doCheckForScore():
 		$Spot1.score_item()
 		$Spot2.score_item()
 		$Spot3.score_item()
+		spawnContents()
 
+func spawnContents():
+	var newItem = Globals.itemSpawner.SpawnNewItem()
+	$Spot1.hold_item(newItem)
+	newItem = Globals.itemSpawner.SpawnNewItem()
+	$Spot2.hold_item(newItem)
+	newItem = Globals.itemSpawner.SpawnNewItem()
+	while (newItem == $Spot1.heldItem
+		&& newItem == $Spot2.heldItem):
+		newItem = Globals.itemSpawner.SpawnNewItem()
+	$Spot3.hold_item(newItem)
 
 func _on_spot_scored(points: Variant) -> void:
 	score.emit(points)

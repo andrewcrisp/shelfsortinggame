@@ -8,7 +8,10 @@ func _on_button_pressed() -> void:
 	SpawnNewItem()
 
 func SpawnNewItem():
-	var item = scenes[RandomNumberGenerator.new().randi() % len(scenes)]
+	var randItemNumber = RandomNumberGenerator.new().randi() % (len(scenes) + 1)
+	if (randItemNumber == len(scenes)):
+		return null
+	var item = scenes[randItemNumber]
 	var newItem = item.instantiate()
 	newItem.type = item
 	newItem.scale = Vector2(6,6)

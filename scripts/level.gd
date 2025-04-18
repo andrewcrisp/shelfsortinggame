@@ -2,14 +2,12 @@ extends Node2D
 
 signal score(points)
 
-var item_spawner: Item_Spawner
-
 var carriedItem = null
 
 func _ready() -> void:
-	item_spawner = $item_spawner
-	$Conveyor.item_spawner = item_spawner
+	Globals.itemSpawner = $item_spawner
 	connect("score", _on_shelf_score)
+	get_tree().call_group("shelves", "spawnContents")
 
 func drop_item():
 	carriedItem = null

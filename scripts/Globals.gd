@@ -2,6 +2,7 @@ extends Node
 
 var game: Game
 var scoreboard: Scoreboard
+var itemSpawner: Item_Spawner
 
 var z_levels = {
 	"background" = 0,
