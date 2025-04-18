@@ -5,7 +5,7 @@ var currentControl = null
 
 func _ready() -> void:
 	Globals.game = $"."
-	Globals.scoreboard = $Control/Scoreboard
+	Globals.scoreboard = $Scoreboard
 	$Control/Menu/StartButton.connect("pressed", on_load_level_button_pressed)
 	
 func on_load_level_button_pressed():
