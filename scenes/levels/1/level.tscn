@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://b5rb3vco0eqhs" path="res://scenes/conveyor.tscn" id="4_u2ksi"]
 
 [node name="Level" type="Node2D"]
-position = Vector2(0, -208)
 script = ExtResource("1_de24i")
 
 [node name="item_spawner" parent="." instance=ExtResource("2_emed8")]
@@ -37,4 +36,3 @@ scale = Vector2(2, 2)
 
 [node name="Conveyor" parent="." instance=ExtResource("4_u2ksi")]
 position = Vector2(-110, 1450)
-scale = Vector2(2, 2)
