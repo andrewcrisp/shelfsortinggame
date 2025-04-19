@@ -25,6 +25,6 @@ func remove_item():
 	item_removed.emit($".")
 	
 func score_item():
-	heldItem.queue_free()
+	heldItem.send_to_scoreboard()
 	remove_item()
 	Globals.scoreboard.score_item(points)
