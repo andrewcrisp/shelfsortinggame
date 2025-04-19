@@ -14,8 +14,8 @@ func SpawnNewItem():
 	var item = scenes[randItemNumber]
 	var newItem = item.instantiate()
 	newItem.type = item
-	newItem.scale = Vector2(6,6)
-	Globals.game.currentLevel.call_deferred("add_child", newItem)
+	#newItem.scale = Vector2(6,6)
+	#Globals.game.currentLevel.call_deferred("add_child", newItem)
 	return newItem
 
 func _ready() -> void:

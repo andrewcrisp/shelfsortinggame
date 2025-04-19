@@ -32,8 +32,6 @@ func doCheckForScore():
 	&& $Spot1.heldItem.type == $Spot2.heldItem.type
 	&& $Spot1.heldItem.type == $Spot3.heldItem.type
 	):
-		
-		print("SCORE")
 		$Spot1.score_item()
 		$Spot2.score_item()
 		$Spot3.score_item()
@@ -49,6 +47,9 @@ func spawnContents():
 		&& newItem == $Spot2.heldItem):
 		newItem = Globals.itemSpawner.SpawnNewItem()
 	$Spot3.hold_item(newItem)
+
+	newItem = Globals.itemSpawner.SpawnNewItem()
+	$Spot1.hold_item_in_background(newItem)
 
 func _on_spot_scored(points: Variant) -> void:
 	score.emit(points)

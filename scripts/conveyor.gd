@@ -35,5 +35,5 @@ func addItem(spot):
 	if !spot.isHoldingItem():
 		var item = Globals.itemSpawner.SpawnNewItem()
 		if (item != null):
-			item.position = spot.global_position
+			item.global_position = spot.global_position
 			spot.hold_item(item)
