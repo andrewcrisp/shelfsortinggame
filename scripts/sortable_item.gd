@@ -38,7 +38,6 @@ func drop():
 		if (hoveredArea != null
 		&& $SortableItemShape.overlaps_area(hoveredArea)
 		&& hoveredArea.get_parent().heldItem == null) :
-			#global_position = hoveredArea.global_position
 			lastArea = hoveredArea
 			hoveredArea.get_parent().hold_item($".")
 		elif lastArea != null:

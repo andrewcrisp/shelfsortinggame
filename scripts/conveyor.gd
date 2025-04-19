@@ -29,7 +29,6 @@ func _on_despawner_entered(area: Area2D):
 	var spot = area.get_parent()
 	spot.global_position = $spawner.global_position
 	itemRequested.emit(spot)
-	#addItem(spot)
 	
 func addItem(spot):
 	if !spot.isHoldingItem():

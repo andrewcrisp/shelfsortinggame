@@ -47,7 +47,6 @@ func spawnContents():
 		&& newItem == $Spot2.heldItem):
 		newItem = Globals.itemSpawner.SpawnNewItem()
 	$Spot3.hold_item(newItem)
-
 	
 	if $Spot1.backItem == null:
 		newItem = Globals.itemSpawner.SpawnNewItem()
