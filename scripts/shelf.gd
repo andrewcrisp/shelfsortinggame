@@ -23,7 +23,16 @@ func _on_spot_item_placed(_spot: Variant) -> void:
 
 func _on_spot_item_removed(_spot: Variant) -> void:
 	numItemsHeld -= 1
+	if (isFrontRowEmpty()):
+		moveBackItemsForward()
+		spawnBackItems()
 
+func isFrontRowEmpty():
+	return (
+		!$Spot1.isHoldingItem()
+		&& !$Spot2.isHoldingItem()
+		&& !$Spot3.isHoldingItem()
+	)
 func doCheckForScore():
 	#print($spot1.heldItem.get_groups())
 	if ($Spot1.isHoldingItem()
@@ -37,7 +46,6 @@ func doCheckForScore():
 		$Spot3.score_item()
 		moveBackItemsForward()
 		spawnBackItems()
-		#spawnContents()
 
 func spawnFrontItems():
 	var newItem = Globals.itemSpawner.SpawnNewItem()
@@ -66,14 +74,10 @@ func spawnBackItems():
 		$Spot3.hold_item_in_background(newItem)
 
 func moveBackItemsForward():
-	if (
-		!$Spot1.isHoldingItem()
-		&& !$Spot2.isHoldingItem()
-		&& !$Spot3.isHoldingItem()
-	):
-		$Spot1.move_item_forward()
-		$Spot2.move_item_forward()
-		$Spot3.move_item_forward()
+	#if (isFrontRowEmpty()):
+	$Spot1.move_item_forward()
+	$Spot2.move_item_forward()
+	$Spot3.move_item_forward()
 
 func spawnContents():
 	spawnFrontItems()

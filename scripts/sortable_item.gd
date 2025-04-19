@@ -3,7 +3,7 @@ class_name SortableItem extends Node2D
 var type = "untyped"
 var isFollowingMouse = false
 var dragposition = 0
-var lastArea
+var lastArea: Spot
 var hoveredArea = null
 var isGrabbable = true
 
@@ -36,18 +36,13 @@ func drop():
 		
 		z_index = Globals.z_levels["placed_item"]
 		if (hoveredArea != null
-		&& $SortableItemShape.overlaps_area(hoveredArea)
-		&& hoveredArea.get_parent().heldItem == null) :
-			lastArea = hoveredArea
+			&& $SortableItemShape.overlaps_area(hoveredArea)
+			&& hoveredArea.get_parent().heldItem == null) :
 			hoveredArea.get_parent().hold_item($".")
-		elif lastArea != null:
-			lastArea.get_parent().hold_item($".")
-		
+
 func tryGrab():
 	if (isGrabbable
-		&& Globals.game.currentLevel.carriedItem == null):
-		if !lastArea == null:
-			lastArea.get_parent().remove_item()
+	&& Globals.game.currentLevel.carriedItem == null):
 		z_index = Globals.z_levels["held_item"]
 		isFollowingMouse = true
 		Globals.game.currentLevel.hold_item($".")

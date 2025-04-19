@@ -22,16 +22,16 @@ func hold_item_in_background(item: SortableItem):
 		item.z_index = BACK_ITEM_Z
 		item.isGrabbable = false
 		item.position = BACK_ITEM_POSITION
-		#item.scale = item.scale * .9
 		item.modulate = Color(.1,.1,.1,.4)
-		
 
 func hold_item(item: SortableItem):
 	if (item != null):
 		heldItem = item
+		if (item.lastArea != null):
+			item.lastArea.remove_item()
+		item.lastArea = $"."
 		item.global_rotation = 0
 		item.z_index = HELD_ITEM_Z
-		item.lastArea = $Area2D
 		item_placed.emit($".")
 
 func move_item_forward():
