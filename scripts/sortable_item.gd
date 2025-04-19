@@ -8,16 +8,16 @@ var hoveredArea = null
 var isGrabbable = true
 
 func _ready() -> void:
-	$"Area2D/CollisionShape2D".shape.size = $Sprite2D.region_rect.size * 1.1
-	$Area2D.connect("area_entered", _on_area_2d_area_entered)
-	$Area2D.connect("area_exited", _on_area_2d_area_exited)
+	$SortableItemShape/CollisionShape2D.shape.size = $Sprite2D.region_rect.size * 1.1
+	$SortableItemShape.connect("area_entered", _on_area_2d_area_entered)
+	$SortableItemShape.connect("area_exited", _on_area_2d_area_exited)
 	
 func _input(event: InputEvent) -> void:
 	if (event is InputEventMouseButton
 		|| event is InputEventScreenTouch):
 		if (event.is_pressed()):
 			var localPos = to_local(event.position)
-			var boundbox:Shape2D = $Area2D/CollisionShape2D.shape
+			var boundbox:Shape2D = $SortableItemShape/CollisionShape2D.shape
 			if boundbox.get_rect().has_point(localPos):
 				tryGrab()
 		else:
@@ -36,7 +36,7 @@ func drop():
 		
 		z_index = Globals.z_levels["placed_item"]
 		if (hoveredArea != null
-		&& $"Area2D".overlaps_area(hoveredArea)
+		&& $SortableItemShape.overlaps_area(hoveredArea)
 		&& hoveredArea.get_parent().heldItem == null) :
 			#global_position = hoveredArea.global_position
 			lastArea = hoveredArea
