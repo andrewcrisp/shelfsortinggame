@@ -29,7 +29,7 @@ func hold_item_in_background(item: SortableItem):
 func hold_item(item: SortableItem):
 	if (item != null):
 		heldItem = item
-		add_child(item)
+		call_deferred("add_child", item)
 		item.global_rotation = 0
 		item.z_index = HELD_ITEM_Z
 		item.lastArea = $Area2D
