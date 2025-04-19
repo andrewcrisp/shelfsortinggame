@@ -22,7 +22,8 @@ func hold_item_in_background(item: SortableItem):
 		item.z_index = BACK_ITEM_Z
 		item.isGrabbable = false
 		item.position = Vector2(-4,2)
-		item.scale = item.scale * .9
+		#item.scale = item.scale * .9
+		item.modulate = Color(.1,.1,.1,.4)
 		
 
 func hold_item(item: SortableItem):
