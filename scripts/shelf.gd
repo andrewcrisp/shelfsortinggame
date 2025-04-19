@@ -48,8 +48,19 @@ func spawnContents():
 		newItem = Globals.itemSpawner.SpawnNewItem()
 	$Spot3.hold_item(newItem)
 
-	newItem = Globals.itemSpawner.SpawnNewItem()
-	$Spot1.hold_item_in_background(newItem)
+	
+	if $Spot1.backItem == null:
+		newItem = Globals.itemSpawner.SpawnNewItem()
+		$Spot1.hold_item_in_background(newItem)
+	if $Spot2.backItem == null:
+			newItem = Globals.itemSpawner.SpawnNewItem()
+			$Spot2.hold_item_in_background(newItem)
+	if $Spot3.backItem == null:
+		newItem = Globals.itemSpawner.SpawnNewItem()
+		while (newItem == $Spot1.backItem
+			&& newItem == $Spot2.backItem):
+			newItem = Globals.itemSpawner.SpawnNewItem()
+		$Spot3.hold_item_in_background(newItem)
 
 func _on_spot_scored(points: Variant) -> void:
 	score.emit(points)
