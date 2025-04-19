@@ -35,9 +35,11 @@ func doCheckForScore():
 		$Spot1.score_item()
 		$Spot2.score_item()
 		$Spot3.score_item()
-		spawnContents()
+		moveBackItemsForward()
+		spawnBackItems()
+		#spawnContents()
 
-func spawnContents():
+func spawnFrontItems():
 	var newItem = Globals.itemSpawner.SpawnNewItem()
 	$Spot1.hold_item(newItem)
 	newItem = Globals.itemSpawner.SpawnNewItem()
@@ -47,7 +49,9 @@ func spawnContents():
 		&& newItem == $Spot2.heldItem):
 		newItem = Globals.itemSpawner.SpawnNewItem()
 	$Spot3.hold_item(newItem)
-	
+
+func spawnBackItems():
+	var newItem: SortableItem
 	if $Spot1.backItem == null:
 		newItem = Globals.itemSpawner.SpawnNewItem()
 		$Spot1.hold_item_in_background(newItem)
@@ -61,5 +65,19 @@ func spawnContents():
 			newItem = Globals.itemSpawner.SpawnNewItem()
 		$Spot3.hold_item_in_background(newItem)
 
+func moveBackItemsForward():
+	if (
+		!$Spot1.isHoldingItem()
+		&& !$Spot2.isHoldingItem()
+		&& !$Spot3.isHoldingItem()
+	):
+		$Spot1.move_item_forward()
+		$Spot2.move_item_forward()
+		$Spot3.move_item_forward()
+
+func spawnContents():
+	spawnFrontItems()
+	spawnBackItems()
+	
 func _on_spot_scored(points: Variant) -> void:
 	score.emit(points)

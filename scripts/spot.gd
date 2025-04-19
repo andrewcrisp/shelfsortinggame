@@ -34,13 +34,32 @@ func hold_item(item: SortableItem):
 		item.lastArea = $Area2D
 		item_placed.emit($".")
 
+func move_item_forward():
+	if (!isHoldingItem()):
+		if (isHoldingBackItem()):
+			hold_item(backItem)
+			remove_back_item()
+			heldItem.z_index = HELD_ITEM_Z
+			heldItem.isGrabbable = true
+			heldItem.position = Vector2.ZERO
+			#item.scale = item.scale * .9
+			heldItem.modulate = Color(1, 1, 1, 1)
+	
 func isHoldingItem():
 	return heldItem != null
+	
+func isHoldingBackItem():
+	return backItem != null
+	
+	
 	
 func remove_item():
 	heldItem = null
 	item_removed.emit($".")
-	
+
+func remove_back_item():
+	backItem = null
+
 func score_item():
 	heldItem.send_to_scoreboard()
 	remove_item()
