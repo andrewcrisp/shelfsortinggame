@@ -2,16 +2,39 @@
 
 [ext_resource type="Script" uid="uid://4jlhnrt30nd2" path="res://scripts/starting_menu.gd" id="1_awdct"]
 
-[node name="Menu" type="VBoxContainer"]
-offset_right = 67.0
-offset_bottom = 66.0
+[node name="Level" type="Node2D"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1080.0
+offset_bottom = 1920.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Menu" type="VBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -67.0
+offset_top = -33.0
+offset_bottom = 33.0
+grow_horizontal = 0
+grow_vertical = 2
 script = ExtResource("1_awdct")
 
-[node name="StartButton" type="Button" parent="."]
+[node name="StartButton" type="Button" parent="Control/Menu"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 50
 text = "Endless"
 
-[node name="AboutButton" type="Button" parent="."]
-visible = false
+[node name="AboutButton" type="Button" parent="Control/Menu"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 50
 text = "About"
