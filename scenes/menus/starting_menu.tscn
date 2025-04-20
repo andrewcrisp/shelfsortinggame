@@ -3,9 +3,15 @@
 [ext_resource type="Script" uid="uid://4jlhnrt30nd2" path="res://scripts/starting_menu.gd" id="1_awdct"]
 
 [node name="Menu" type="VBoxContainer"]
-anchors_preset = -1
+offset_right = 67.0
+offset_bottom = 66.0
 script = ExtResource("1_awdct")
 
 [node name="StartButton" type="Button" parent="."]
 layout_mode = 2
 text = "Endless"
+
+[node name="AboutButton" type="Button" parent="."]
+visible = false
+layout_mode = 2
+text = "About"

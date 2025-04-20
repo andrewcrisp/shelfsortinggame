@@ -12,7 +12,7 @@ var z_levels = {
 
 var groceries = []
 var levels = []
-
+var about_level = "res://scenes/levels/special/about.tscn"
 
 func _ready() -> void:
 	populate_levels()
