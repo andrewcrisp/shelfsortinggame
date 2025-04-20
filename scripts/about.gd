@@ -33,16 +33,15 @@ var credits = [
 		"https://cupnooble.itch.io/"
 	],[
 		"Testers",
-		"Name 1",
-		"Name 2",
-		"Name 3"
+		"Name 1"
 	],[
 		"Tools used",
 		"Developed with Godot Engine",
 		"https://godotengine.org/license",
 		"",
 		"Credits scrawl by benbishopnz",
-		"https://github.com/benbishopnz/godot-credits/tree/master"
+		"https://github.com/benbishopnz/godot-credits/tree/master",
+		"With edit for Godot4 by u/theRealDyer"
 	],[
 		"Special thanks",
 		"My spouse",
