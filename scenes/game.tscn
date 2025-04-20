@@ -20,8 +20,9 @@ grow_vertical = 1
 scale = Vector2(4, 4)
 
 [node name="Starting_Menu" parent="." instance=ExtResource("2_lnu2h")]
+position = Vector2(-100, 0)
 
-[node name="Background" type="Sprite2D" parent="Starting_Menu"]
+[node name="Background" type="Sprite2D" parent="."]
 z_index = -1
 texture_repeat = 2
 texture = ExtResource("4_lbhrr")
