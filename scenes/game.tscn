@@ -21,7 +21,7 @@ scale = Vector2(4, 4)
 
 [node name="Starting_Menu" parent="." instance=ExtResource("2_lnu2h")]
 
-[node name="Background" type="Sprite2D" parent="."]
+[node name="Background" type="Sprite2D" parent="Starting_Menu"]
 z_index = -1
 texture_repeat = 2
 texture = ExtResource("4_lbhrr")
