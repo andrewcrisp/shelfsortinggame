@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://3oq17hv1epby"]
+
+[ext_resource type="Script" uid="uid://ytg2ifbfnpbo" path="res://scripts/timed_level.gd" id="1_b8o7s"]
+
+[node name="TimedLevel" type="Node2D"]
+script = ExtResource("1_b8o7s")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Container" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Container"]
+layout_mode = 2
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 30
+text = "120"
