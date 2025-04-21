@@ -32,7 +32,7 @@ func _process(_delta: float) -> void:
 func drop():
 	if isFollowingMouse:
 		isFollowingMouse = false
-		Globals.game.currentLevel.drop_item()
+		Globals.game.current_level.drop_item()
 		
 		z_index = Globals.z_levels["placed_item"]
 		if (hoveredArea != null
@@ -42,10 +42,10 @@ func drop():
 
 func tryGrab():
 	if (isGrabbable
-	&& Globals.game.currentLevel.carriedItem == null):
+	&& Globals.game.current_level.carriedItem == null):
 		z_index = Globals.z_levels["held_item"]
 		isFollowingMouse = true
-		Globals.game.currentLevel.hold_item($".")
+		Globals.game.current_level.hold_item($".")
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	hoveredArea = area

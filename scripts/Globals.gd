@@ -1,5 +1,7 @@
 extends Node
 
+const MINUTES: int = 60
+
 var game: Game
 var scoreboard: Scoreboard
 var itemSpawner: Item_Spawner
