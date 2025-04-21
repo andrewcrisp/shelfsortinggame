@@ -16,7 +16,7 @@ anchors_preset = 0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="Container"]
 offset_right = 103.0
 offset_bottom = 83.0
 text = "120"

@@ -2,7 +2,7 @@ extends Node2D
 
 const MINUTES: int = 60
 @onready var timer = $Timer
-@onready var timedisplay = $Label
+@onready var timedisplay = $Container/Label
 
 
 func _ready() -> void:
