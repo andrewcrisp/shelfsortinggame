@@ -19,6 +19,7 @@ func _process(_delta: float) -> void:
 func hold_item_in_background(item: SortableItem):
 	if (item != null):
 		backItem = item
+		item.lastArea = null
 		item.z_index = BACK_ITEM_Z
 		item.isGrabbable = false
 		item.position = BACK_ITEM_POSITION
@@ -37,12 +38,17 @@ func hold_item(item: SortableItem):
 func move_item_forward():
 	if (!isHoldingItem()):
 		if (isHoldingBackItem()):
-			hold_item(backItem)
+			var item = backItem
+			heldItem = item
+			if (item.lastArea != null):
+				item.lastArea.remove_item()
+			item.lastArea = $"."
+			item.global_rotation = 0
+			item.z_index = HELD_ITEM_Z
 			remove_back_item()
 			heldItem.z_index = HELD_ITEM_Z
 			heldItem.isGrabbable = true
 			heldItem.position = Vector2.ZERO
-			#item.scale = item.scale * .9
 			heldItem.modulate = Color(1, 1, 1, 1)
 	
 func isHoldingItem():
@@ -62,6 +68,6 @@ func remove_back_item():
 
 func score_item():
 	heldItem.send_to_scoreboard()
-	remove_item()
+	heldItem = null
 	Globals.scoreboard.score_item(points)
 	

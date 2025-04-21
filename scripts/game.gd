@@ -6,17 +6,30 @@ var currentControl = null
 func _ready() -> void:
 	Globals.game = $"."
 	Globals.scoreboard = $Scoreboard
-	$Starting_Menu/Control/Menu/StartButton.connect("pressed", on_load_level_button_pressed)
+	$Starting_Menu/Control/Menu/EndlessModeButton.connect("pressed", on_endless_mode_button_pressed)
 	$Starting_Menu/Control/Menu/AboutButton.connect("pressed", on_about_button_pressed)
+	$Starting_Menu/Control/Menu/TimedModeButton.connect("pressed", on_timed_mode_button_pressed)
 	
-func on_load_level_button_pressed():
-	#$Control.visible = false
-	load_level(Globals.levels[0])
+func on_endless_mode_button_pressed():
+	load_endless_mode_level(Globals.levels[0])
+	hide_starting_menu()
 	show_scoreboard()
 	
 func on_about_button_pressed():
 	load_level(Globals.about_level)
 	hide_starting_menu()
+	
+func on_timed_mode_button_pressed():
+	load_timed_level(Globals.levels[0])
+	hide_starting_menu()
+	show_scoreboard()
+
+func load_endless_mode_level(level:String):
+	load_level(level)
+
+func load_timed_level(level: String):
+	var timedLevel = load("res://scenes/timed_level.tscn").instantiate()
+	
 	
 func load_level(level: String):
 	var nextLevel = load(level).instantiate()
@@ -24,7 +37,6 @@ func load_level(level: String):
 		currentLevel.queue_free()
 	currentLevel = nextLevel
 	add_child(currentLevel)
-	hide_starting_menu()
 
 func show_scoreboard():
 	Globals.scoreboard.reset()

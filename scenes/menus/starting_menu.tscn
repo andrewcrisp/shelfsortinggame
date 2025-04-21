@@ -30,12 +30,12 @@ grow_horizontal = 0
 grow_vertical = 2
 script = ExtResource("1_awdct")
 
-[node name="StartButton" type="Button" parent="Control/Menu"]
+[node name="EndlessModeButton" type="Button" parent="Control/Menu"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "Endless"
 
-[node name="Button" type="Button" parent="Control/Menu"]
+[node name="TimedModeButton" type="Button" parent="Control/Menu"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "Two minute timed
