@@ -29,7 +29,9 @@ func load_endless_mode_level(level:String):
 
 func load_timed_level(level: String):
 	var timedLevel = load("res://scenes/timed_level.tscn").instantiate()
-	
+	load_level(level)
+	add_child(timedLevel)
+	timedLevel.timer.start()
 	
 func load_level(level: String):
 	var nextLevel = load(level).instantiate()
