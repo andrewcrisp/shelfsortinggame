@@ -6,7 +6,7 @@ func _ready() -> void:
 	score = 0
 	
 func _process(_delta: float) -> void:
-	$RichTextLabel.text = str(score)
+	$ScoreLabel.text = str(score)
 	
 func score_item(points):
 	score += points
