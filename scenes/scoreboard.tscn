@@ -18,4 +18,5 @@ script = ExtResource("1_8juob")
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+text = "0	"
 label_settings = SubResource("LabelSettings_ucmtr")

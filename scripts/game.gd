@@ -42,7 +42,7 @@ func load_timed_level(level: String):
 	load_level(level)
 	add_child(timed_level)
 	timed_level.timer.timeout.connect(on_timed_level_timeout)
-	timed_level.timer.wait_time = 10# * Globals.MINUTES
+	timed_level.timer.wait_time = 2 * Globals.MINUTES
 	timed_level.timer.start()
 	
 func load_level(level: String):
