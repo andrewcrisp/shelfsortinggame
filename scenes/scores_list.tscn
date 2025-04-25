@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=3 uid="uid://dseliesn0o4sx"]
+
+[ext_resource type="PackedScene" uid="uid://drnh7cm2u64u0" path="res://scenes/score_entry.tscn" id="1_dwkto"]
+
+[node name="ScoresList" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="ScoreHeaders" parent="." instance=ExtResource("1_dwkto")]
+layout_mode = 2
+anchors_preset = 0
+anchor_left = 0.0
+anchor_right = 0.0
+offset_left = 0.0
+offset_right = 0.0
+
+[node name="Scores" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_top = 60.0
+offset_bottom = 120.0
+grow_horizontal = 2
+theme_override_constants/separation = 40
+
+[node name="ScoreEntry2" parent="Scores" instance=ExtResource("1_dwkto")]
+layout_mode = 2
+
+[node name="ScoreEntry" parent="Scores" instance=ExtResource("1_dwkto")]
+layout_mode = 2

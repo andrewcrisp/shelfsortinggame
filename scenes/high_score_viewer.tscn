@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://cen6idq2e3365"]
+
+[ext_resource type="Texture2D" uid="uid://dpxdast8erek2" path="res://assets/Brown.png" id="1_a7yt3"]
+[ext_resource type="Script" uid="uid://dy2weaxebyrav" path="res://scripts/high_score_viewer.gd" id="1_t7k5k"]
+[ext_resource type="PackedScene" uid="uid://dseliesn0o4sx" path="res://scenes/scores_list.tscn" id="3_67yak"]
+
+[node name="HighScoreViewer" type="Node2D"]
+script = ExtResource("1_t7k5k")
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(540, 960)
+texture = ExtResource("1_a7yt3")
+region_enabled = true
+region_rect = Rect2(0, 0, 1080, 1920)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 540.0
+offset_top = 200.0
+offset_right = 540.0
+offset_bottom = 200.0
+grow_horizontal = 2
+
+[node name="ScoresList" parent="Control" instance=ExtResource("3_67yak")]

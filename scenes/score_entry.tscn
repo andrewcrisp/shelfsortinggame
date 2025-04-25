@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=3 uid="uid://drnh7cm2u64u0"]
+
+[ext_resource type="Script" uid="uid://dwv5xu4c8l5mq" path="res://scripts/score_entry.gd" id="1_n3xs8"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_n3xs8"]
+font_size = 40
+
+[node name="ScoreEntry" type="Control"]
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -540.0
+offset_right = -540.0
+grow_horizontal = 2
+script = ExtResource("1_n3xs8")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -203.0
+offset_right = 203.0
+offset_bottom = 40.0
+grow_horizontal = 2
+theme_override_constants/separation = 50
+
+[node name="GameModeLabel" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "Game Mode"
+label_settings = SubResource("LabelSettings_n3xs8")
+
+[node name="DateLabel" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "Date"
+label_settings = SubResource("LabelSettings_n3xs8")
+
+[node name="Score" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "Score"
+label_settings = SubResource("LabelSettings_n3xs8")
