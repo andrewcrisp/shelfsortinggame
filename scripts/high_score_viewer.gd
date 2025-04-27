@@ -42,7 +42,7 @@ func load_hiscores():
 				var newScore:ScoreEntry = load("res://scenes/score_entry.tscn").instantiate()
 				newScore.gameMode = i
 				newScore.dateScored = score.dateScored
-				newScore.score = str(score["score"])
+				newScore.score = str(score["score"]).pad_decimals(0)
 				hiscores.append(newScore)
 				#$Control/ScoresList/Scores.add_child(newScore)
 			
