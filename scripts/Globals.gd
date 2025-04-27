@@ -6,6 +6,7 @@ var game: Game
 var scoreboard: Scoreboard
 var itemSpawner: Item_Spawner
 
+
 var z_levels = {
 	"background" = 0,
 	"held_item" = 1000,
@@ -19,7 +20,7 @@ var starting_menu_level = "res://scenes/menus/startig_menu.tscn"
 
 func _ready() -> void:
 	populate_levels()
-	populate_groceries()
+	populate_groceries()	
 	
 func populate_levels():
 	levels.append("res://scenes/levels/1/level.tscn")

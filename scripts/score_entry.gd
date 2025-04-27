@@ -8,4 +8,4 @@ func _ready() -> void:
 	$HBoxContainer/GameModeLabel.text = gameMode
 	
 	$HBoxContainer/DateLabel.text = dateScored
-	$HBoxContainer/Score.text = score	
+	$HBoxContainer/ScoreLabel.text = score	

@@ -23,9 +23,3 @@ offset_top = 60.0
 offset_bottom = 120.0
 grow_horizontal = 2
 theme_override_constants/separation = 40
-
-[node name="ScoreEntry2" parent="Scores" instance=ExtResource("1_dwkto")]
-layout_mode = 2
-
-[node name="ScoreEntry" parent="Scores" instance=ExtResource("1_dwkto")]
-layout_mode = 2

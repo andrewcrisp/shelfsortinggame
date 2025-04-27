@@ -35,9 +35,8 @@ region_enabled = true
 region_rect = Rect2(0, 0, 1080, 1920)
 
 [node name="Control" type="VBoxContainer" parent="."]
-offset_top = 300.0
 offset_right = 1080.0
-offset_bottom = 800.0
+offset_bottom = 500.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 alignment = 1
