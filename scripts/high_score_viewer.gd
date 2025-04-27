@@ -1,4 +1,4 @@
-extends Node2D
+extends Control
 
 var hiscoresFilePath = "res://assets/text/hiscores.json"
 var userHiscoresFilePath = "user://hiscores.json"
@@ -6,6 +6,7 @@ var hiscores = Array([], TYPE_OBJECT, "Node", ScoreEntry)
 
 func _ready():
 	load_hiscores()
+	populateScoresList()
 	
 func load_hiscores():
 	if FileAccess.file_exists(userHiscoresFilePath):
@@ -13,8 +14,6 @@ func load_hiscores():
 	
 	if not FileAccess.file_exists(userHiscoresFilePath):
 		DirAccess.copy_absolute(hiscoresFilePath, userHiscoresFilePath)
-	
-	
 	
 	var save_file = FileAccess.open(userHiscoresFilePath, FileAccess.READ)
 	while save_file.get_position() < save_file.get_length():
@@ -44,6 +43,9 @@ func load_hiscores():
 				newScore.gameMode = i
 				newScore.dateScored = score.dateScored
 				newScore.score = str(score["score"])
-				$Control/ScoresList/Scores.add_child(newScore)
+				hiscores.append(newScore)
+				#$Control/ScoresList/Scores.add_child(newScore)
 			
-	
+func populateScoresList():
+	for i in hiscores:
+		$Control/ScoresList/Scores.add_child(i)

@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://ddha4xyfeh1en" path="res://scripts/score_report.gd" id="1_s1n5t"]
 [ext_resource type="Texture2D" uid="uid://y5u1irkvqtu5" path="res://assets/Wood_Bridge.png" id="2_4synj"]
 [ext_resource type="Texture2D" uid="uid://ddfe256c7mtw5" path="res://assets/Basic_Furniture.png" id="3_uin86"]
-[ext_resource type="PackedScene" uid="uid://dseliesn0o4sx" path="res://scenes/scores_list.tscn" id="4_c4blo"]
 [ext_resource type="Texture2D" uid="uid://dpxdast8erek2" path="res://assets/Brown.png" id="4_puo0v"]
+[ext_resource type="PackedScene" uid="uid://cen6idq2e3365" path="res://scenes/high_score_viewer.tscn" id="5_c4blo"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_uin86"]
 font_size = 50
@@ -68,8 +68,5 @@ text = "0	"
 label_settings = SubResource("LabelSettings_uin86")
 horizontal_alignment = 1
 
-[node name="ScoresList" parent="Control" instance=ExtResource("4_c4blo")]
-z_index = 1
+[node name="HighScoreViewer" parent="Control" instance=ExtResource("5_c4blo")]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4

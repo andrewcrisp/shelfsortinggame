@@ -27,9 +27,8 @@ func on_timed_mode_button_pressed():
 func on_timed_level_timeout():
 	var score_report = load("res://scenes/score_report.tscn").instantiate()
 	add_child(score_report)
-	
-	var score_label = score_report.get_node("Control/ScoreLabel")
-	score_label.text = str(Globals.scoreboard.score)
+	var gamemode = "two_minute_hiscore"
+	score_report.AddScore(Globals.scoreboard.score, gamemode)
 	current_level.queue_free()
 	Globals.scoreboard.visible = false
 	
