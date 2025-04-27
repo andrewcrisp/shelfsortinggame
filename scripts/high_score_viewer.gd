@@ -47,5 +47,11 @@ func load_hiscores():
 				#$Control/ScoresList/Scores.add_child(newScore)
 			
 func populateScoresList():
+	var oldscores :=$Control/ScoresList/Scores.get_children()
+	for child in oldscores:
+		$Control/ScoresList/Scores.remove_child(child)
+	hiscores.sort_custom(
+		func(a: ScoreEntry, b:ScoreEntry): return a.score < b.score
+	)
 	for i in hiscores:
 		$Control/ScoresList/Scores.add_child(i)
