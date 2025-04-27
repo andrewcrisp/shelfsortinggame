@@ -41,7 +41,7 @@ func load_timed_level(level: String):
 	add_child(timed_level)
 	mode_control = timed_level
 	timed_level.timer.timeout.connect(on_timed_level_timeout)
-	timed_level.timer.wait_time = 5#2 * Globals.MINUTES
+	timed_level.timer.wait_time = 2 * Globals.MINUTES
 	timed_level.timer.start()
 	
 func load_level(level: String):
