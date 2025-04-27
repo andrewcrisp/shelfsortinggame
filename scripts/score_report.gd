@@ -4,7 +4,7 @@ var dateFormat = "%s/%s/%s %s:%s" #4/25/2025 13:00:00
 func _ready():
 	var viewportSize = get_viewport().get_visible_rect().size
 	$Control.size = viewportSize
-	AddScore("25", "mygame")
+	#AddScore("25", "mygame")
 
 func AddScore(score:String, gamemode:String):
 	$Control/ScoreLabel.text = str(score)

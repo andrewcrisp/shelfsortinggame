@@ -1,1 +1,1 @@
-extends VBoxContainer
+class_name StartingMenu extends VBoxContainer

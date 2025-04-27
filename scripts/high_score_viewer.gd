@@ -34,13 +34,12 @@ func load_hiscores():
 		# Firstly, we need to create the object and add it to the tree and set its position.
 
 		# Now we set the remaining variables.
-		for i in node_data.keys():
-			if i == "filename" or i == "parent" or i == "pos_x" or i == "pos_y":
+		for gamemode in node_data.keys():
+			if gamemode == "filename" or gamemode == "parent" or gamemode == "pos_x" or gamemode == "pos_y":
 				continue
-			var gamemode = i
-			for score in node_data[i]:
+			for score in node_data[gamemode]:
 				var newScore:ScoreEntry = load("res://scenes/score_entry.tscn").instantiate()
-				newScore.gameMode = i
+				newScore.gameMode = gamemode
 				newScore.dateScored = score.dateScored
 				newScore.score = str(score["score"]).pad_decimals(0)
 				hiscores.append(newScore)

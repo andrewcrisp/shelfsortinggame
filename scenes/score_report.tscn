@@ -68,5 +68,11 @@ text = "0	"
 label_settings = SubResource("LabelSettings_uin86")
 horizontal_alignment = 1
 
+[node name="LoadMainMenuButton" type="Button" parent="Control"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 50
+text = "Restart"
+
 [node name="HighScoreViewer" parent="Control" instance=ExtResource("5_c4blo")]
 layout_mode = 2

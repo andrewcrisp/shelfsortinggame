@@ -1,7 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://b6e00skvjt6r"]
+[gd_scene load_steps=4 format=3 uid="uid://b6e00skvjt6r"]
 
 [ext_resource type="Script" uid="uid://d1krl6w6f8av4" path="res://scripts/game.gd" id="1_uwrxv"]
-[ext_resource type="PackedScene" uid="uid://cb0bwa4vxe8rc" path="res://scenes/menus/starting_menu.tscn" id="2_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://cfwvj4m5wtga" path="res://scenes/scoreboard.tscn" id="2_yqjtg"]
 [ext_resource type="Texture2D" uid="uid://dpxdast8erek2" path="res://assets/Brown.png" id="4_lbhrr"]
 
@@ -20,8 +19,6 @@ offset_bottom = 20.0
 grow_horizontal = 1
 grow_vertical = 1
 scale = Vector2(4, 4)
-
-[node name="Starting_Menu" parent="." instance=ExtResource("2_lnu2h")]
 
 [node name="Background" type="Sprite2D" parent="."]
 z_index = -1
