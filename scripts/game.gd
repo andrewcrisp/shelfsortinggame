@@ -15,6 +15,7 @@ func on_endless_mode_button_pressed():
 	
 func on_about_button_pressed():
 	load_level(Globals.about_level)
+	hide_scoreboard()
 	
 func on_timed_mode_button_pressed():
 	load_timed_level(Globals.levels[0])
