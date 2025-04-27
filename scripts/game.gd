@@ -1,6 +1,7 @@
 class_name Game extends Node
 
 @onready var current_level = null
+@onready var mode_control = null
 var currentControl = null
 
 func _ready() -> void:
@@ -25,6 +26,7 @@ func on_timed_level_timeout():
 	var gamemode = "two_minute_hiscore"
 	score_report.AddScore(str(Globals.scoreboard.score), gamemode)
 	current_level.queue_free()
+	mode_control.queue_free()
 	current_level = score_report
 	hide_scoreboard()
 	score_report.get_node("Control/LoadMainMenuButton").connect("pressed", load_main_menu)
@@ -36,6 +38,7 @@ func load_timed_level(level: String):
 	var timed_level = load("res://scenes/timed_level.tscn").instantiate()
 	load_level(level)
 	add_child(timed_level)
+	mode_control = timed_level
 	timed_level.timer.timeout.connect(on_timed_level_timeout)
 	timed_level.timer.wait_time = 5#2 * Globals.MINUTES
 	timed_level.timer.start()
@@ -45,6 +48,7 @@ func load_level(level: String):
 	if(current_level != null):
 		current_level.queue_free()
 	current_level = nextLevel
+	reset_scoreboard()
 	add_child(current_level)
 
 func hide_scoreboard():
