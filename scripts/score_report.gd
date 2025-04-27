@@ -21,6 +21,6 @@ func AddScore(score:String, gamemode:String):
 	newScore.score = score
 	$Control/HighScoreViewer.hiscores.append(newScore)
 	$Control/HighScoreViewer.populateScoresList()
-	
+	$Control/HighScoreViewer.saveScoresList()
 	#$Control/HighScoreViewer
 	

@@ -6,7 +6,6 @@ var currentControl = null
 func _ready() -> void:
 	Globals.game = $"."
 	Globals.scoreboard = $Scoreboard
-	current_level = $Starting_Menu
 	show_starting_menu()
 	
 func on_endless_mode_button_pressed():

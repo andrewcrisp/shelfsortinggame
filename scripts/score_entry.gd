@@ -9,3 +9,12 @@ func _ready() -> void:
 	
 	$HBoxContainer/DateLabel.text = dateScored
 	$HBoxContainer/ScoreLabel.text = score	
+
+func save():
+	var save_dict = {
+		"filename" : get_scene_file_path(),
+		"gameMode" : gameMode,
+		"dateScored" : dateScored,
+		"score" : str(score)
+	}
+	return save_dict

@@ -1,1 +1,3 @@
-{	"two_minute_hiscore" : [		{ 			"dateScored" : "4/25/2025 13:00",			"score" : 20		},		{ 			"dateScored" : "4/25/2025 14:00",			"score" : 30		}	]}
+{"dateScored":"4/27/2025 15:44","filename":"res://scenes/score_entry.tscn","gameMode":"two_minute_hiscore","score":"0"}
+{"dateScored":"4/25/2025 13:00","filename":"res://scenes/score_entry.tscn","gameMode":"two_minute_hiscore","score":"20"}
+{"dateScored":"4/25/2025 14:00","filename":"res://scenes/score_entry.tscn","gameMode":"two_minute_hiscore","score":"30"}
