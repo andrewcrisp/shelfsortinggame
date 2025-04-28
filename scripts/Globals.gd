@@ -6,6 +6,10 @@ var game: Game
 var scoreboard: Scoreboard
 var itemSpawner: Item_Spawner
 
+var gamemodes = {
+	"two_minute_timed" = "res://scenes/timed_level.tscn",
+	"endless" = "res://scenes/endless_mode.tscn"
+}
 
 var z_levels = {
 	"background" = 0,

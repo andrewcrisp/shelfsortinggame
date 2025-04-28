@@ -16,27 +16,39 @@ func on_endless_mode_button_pressed():
 func on_about_button_pressed():
 	load_level(Globals.about_level)
 	hide_scoreboard()
-	
+
+func on_quit_button_pressed():
+	var gamemode = "endless"
+	show_score_report_after_level(gamemode)	
+
 func on_timed_mode_button_pressed():
 	load_timed_level(Globals.levels[0])
 	reset_scoreboard()
 	
 func on_timed_level_timeout():
+	var gamemode = "two_minute_hiscore"
+	show_score_report_after_level(gamemode)
+	
+func show_score_report_after_level(gamemode):
 	var score_report:ScoreReport = load("res://scenes/score_report.tscn").instantiate()
 	add_child(score_report)
-	var gamemode = "two_minute_hiscore"
 	score_report.AddScore(str(Globals.scoreboard.score), gamemode)
 	current_level.queue_free()
 	mode_control.queue_free()
 	current_level = score_report
 	hide_scoreboard()
 	score_report.get_node("Control/LoadMainMenuButton").connect("pressed", load_main_menu)
-		
+	
 func load_endless_mode_level(level:String):
+	var gameMode = load(Globals.gamemodes["endless"]).instantiate()
 	load_level(level)
+	add_child(gameMode)
+	mode_control = gameMode
+	gameMode.get_node("Control/QuitButton").connect("pressed", on_quit_button_pressed)
+	
 
 func load_timed_level(level: String):
-	var timed_level = load("res://scenes/timed_level.tscn").instantiate()
+	var timed_level = load(Globals.gamemodes["two_minute_timed"]).instantiate()
 	load_level(level)
 	add_child(timed_level)
 	mode_control = timed_level
