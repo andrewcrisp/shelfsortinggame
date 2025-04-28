@@ -60,18 +60,17 @@ func spawnFrontItems():
 
 func spawnBackItems():
 	var newItem: SortableItem
-	if $Spot1.backItem == null:
+	newItem = Globals.itemSpawner.SpawnNewItem()
+	$Spot1.hold_item_in_background(newItem)
+	
+	newItem = Globals.itemSpawner.SpawnNewItem()
+	$Spot2.hold_item_in_background(newItem)
+	
+	newItem = Globals.itemSpawner.SpawnNewItem()
+	while (newItem == $Spot1.backItem
+		&& newItem == $Spot2.backItem):
 		newItem = Globals.itemSpawner.SpawnNewItem()
-		$Spot1.hold_item_in_background(newItem)
-	if $Spot2.backItem == null:
-			newItem = Globals.itemSpawner.SpawnNewItem()
-			$Spot2.hold_item_in_background(newItem)
-	if $Spot3.backItem == null:
-		newItem = Globals.itemSpawner.SpawnNewItem()
-		while (newItem == $Spot1.backItem
-			&& newItem == $Spot2.backItem):
-			newItem = Globals.itemSpawner.SpawnNewItem()
-		$Spot3.hold_item_in_background(newItem)
+	$Spot3.hold_item_in_background(newItem)
 
 func moveBackItemsForward():
 	#if (isFrontRowEmpty()):
