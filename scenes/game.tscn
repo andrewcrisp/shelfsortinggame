@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://b6e00skvjt6r"]
+[gd_scene load_steps=5 format=3 uid="uid://b6e00skvjt6r"]
 
 [ext_resource type="Script" uid="uid://d1krl6w6f8av4" path="res://scripts/game.gd" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://cfwvj4m5wtga" path="res://scenes/scoreboard.tscn" id="2_yqjtg"]
-[ext_resource type="Texture2D" uid="uid://dpxdast8erek2" path="res://assets/Brown.png" id="4_lbhrr"]
+[ext_resource type="PackedScene" uid="uid://be7fbaw21lj7s" path="res://scenes/menus/menu_background.tscn" id="3_lnu2h"]
+[ext_resource type="PackedScene" uid="uid://duu4i61jd05wk" path="res://scenes/menus/start_screen.tscn" id="4_lbhrr"]
 
 [node name="Game" type="Node"]
 script = ExtResource("1_uwrxv")
@@ -20,10 +21,12 @@ grow_horizontal = 1
 grow_vertical = 1
 scale = Vector2(4, 4)
 
-[node name="Background" type="Sprite2D" parent="."]
-z_index = -1
-texture_repeat = 2
-texture = ExtResource("4_lbhrr")
-offset = Vector2(540, 960)
-region_enabled = true
-region_rect = Rect2(0, 0, 1080, 1920)
+[node name="StartScreen" parent="." instance=ExtResource("4_lbhrr")]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_top = 30.0
+offset_bottom = 30.0
+grow_horizontal = 2
+
+[node name="Background" parent="." instance=ExtResource("3_lnu2h")]

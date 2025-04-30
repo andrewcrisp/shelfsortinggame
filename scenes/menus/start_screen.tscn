@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://duu4i61jd05wk"]
+
+[node name="StartScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="GameTitle" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -380.5
+offset_right = 380.5
+offset_bottom = 103.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 75
+text = "A Shelf Sorting Game"
+horizontal_alignment = 1
+vertical_alignment = 1

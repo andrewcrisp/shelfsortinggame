@@ -19,3 +19,8 @@ android/
 
 *.tmp
 bin/
+
+
+
+#Temporary ignores
+assets/*

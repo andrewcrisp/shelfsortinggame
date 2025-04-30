@@ -63,6 +63,8 @@ func load_level(level: String):
 	current_level = nextLevel
 	reset_scoreboard()
 	add_child(current_level)
+	$Background.visible = false
+	$StartScreen.visible = false
 
 func hide_scoreboard():
 	Globals.scoreboard.visible = false
@@ -80,6 +82,8 @@ func show_starting_menu():
 	starting_menu.z_index = 1
 	current_level = starting_menu
 	add_child(starting_menu)
+	$Background.visible = true
+	$StartScreen.visible = true
 	
 func load_main_menu():
 	if(current_level != null):
