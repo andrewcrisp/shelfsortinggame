@@ -1,54 +1,69 @@
 [gd_scene load_steps=9 format=3 uid="uid://w1sbduy44y4r"]
 
-[ext_resource type="Texture2D" uid="uid://dh46esb2fdf2l" path="res://assets/Game_UI_03/PNG/backgrounds/bg_03.PNG" id="1_q5bgg"]
-[ext_resource type="Texture2D" uid="uid://cyk4xs1ywr4ld" path="res://assets/Game_UI_03/PNG/backgrounds/bg_02.PNG" id="2_c16ly"]
-[ext_resource type="Texture2D" uid="uid://be3wqtte6okkb" path="res://assets/Game_UI_03/PNG/slots/s_01.png" id="3_rlg85"]
-[ext_resource type="Texture2D" uid="uid://brar54h2ery8p" path="res://assets/Game_UI_03/PNG/slots/s_t_08.png" id="4_xq0ru"]
-[ext_resource type="Texture2D" uid="uid://drbkuktldxpdf" path="res://assets/Game_UI_03/PNG/slots/s_09.png" id="5_hgu8c"]
-[ext_resource type="Texture2D" uid="uid://darp81nohlyk7" path="res://assets/RPG_Inn_Icons/vegetables/transparent/Tex_veg_a_ (1).png" id="6_gnw1v"]
-[ext_resource type="Texture2D" uid="uid://ctwv6jac2em7w" path="res://assets/RPG_Inn_Icons/vegetables/transparent/Tex_veg_a_ (3).PNG" id="7_aatjq"]
-[ext_resource type="Texture2D" uid="uid://djv3rqpiha7j7" path="res://assets/RPG_Inn_Icons/tools/transparent/Tex_tool_a_ (38).png" id="8_rkee3"]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_fvbel"]
+load_path = "res://.godot/imported/bg_03.PNG-a85e9496be282919381bbd7607d05bab.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ersib"]
+load_path = "res://.godot/imported/bg_02.PNG-1bd50bb7bf34f61e2202b67ef9dedef6.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_fl4el"]
+load_path = "res://.godot/imported/s_01.png-bcab0ea3507c3a1eec422b0cf7546dd1.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_mutj4"]
+load_path = "res://.godot/imported/s_t_08.png-0dc7487cddb1ed59cc4203c981a268a5.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_22n3q"]
+load_path = "res://.godot/imported/s_09.png-f99fcd907ec0ef35f80799411483b962.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_g7cpj"]
+load_path = "res://.godot/imported/Tex_veg_a_ (1).png-3e73eeb97fbeba875e2a45c788518e4d.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_kchu7"]
+load_path = "res://.godot/imported/Tex_veg_a_ (3).PNG-79cadcd1ec7b20e525af580a88cb8d2b.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_aru1e"]
+load_path = "res://.godot/imported/Tex_tool_a_ (38).png-7adae98fd1706d87ad3b59d9007394f1.ctex"
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Bg03" type="Sprite2D" parent="."]
 position = Vector2(549, 1037)
-texture = ExtResource("1_q5bgg")
+texture = SubResource("CompressedTexture2D_fvbel")
 
 [node name="Bg04" type="Sprite2D" parent="."]
 modulate = Color(0, 0, 0, 0.509)
 position = Vector2(646, 1013)
-texture = ExtResource("2_c16ly")
+texture = SubResource("CompressedTexture2D_ersib")
 
 [node name="Bg02" type="Sprite2D" parent="."]
 position = Vector2(544, 954)
-texture = ExtResource("2_c16ly")
+texture = SubResource("CompressedTexture2D_ersib")
 
 [node name="S01" type="Sprite2D" parent="."]
 position = Vector2(854, 1215)
 scale = Vector2(0.3125, 0.3125)
-texture = ExtResource("3_rlg85")
+texture = SubResource("CompressedTexture2D_fl4el")
 
 [node name="ST08" type="Sprite2D" parent="."]
 position = Vector2(678.953, 1774.5)
 scale = Vector2(0.714953, 0.714953)
-texture = ExtResource("4_xq0ru")
+texture = SubResource("CompressedTexture2D_mutj4")
 
 [node name="S09" type="Sprite2D" parent="."]
 position = Vector2(771.25, 421.375)
 scale = Vector2(0.573781, 0.350271)
-texture = ExtResource("5_hgu8c")
+texture = SubResource("CompressedTexture2D_22n3q")
 
 [node name="TexVegA(1)" type="Sprite2D" parent="."]
 position = Vector2(910, 418)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("6_gnw1v")
+texture = SubResource("CompressedTexture2D_g7cpj")
 
 [node name="TexVegA(3)" type="Sprite2D" parent="."]
 position = Vector2(857, 1227)
 scale = Vector2(0.488281, 0.521485)
-texture = ExtResource("7_aatjq")
+texture = SubResource("CompressedTexture2D_kchu7")
 
 [node name="TexToolA(38)" type="Sprite2D" parent="."]
 position = Vector2(246, 1787)
-texture = ExtResource("8_rkee3")
+texture = SubResource("CompressedTexture2D_aru1e")

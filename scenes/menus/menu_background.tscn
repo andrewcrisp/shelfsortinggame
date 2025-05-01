@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://be7fbaw21lj7s"]
 
-[ext_resource type="Texture2D" uid="uid://cyk4xs1ywr4ld" path="res://assets/Game_UI_03/PNG/backgrounds/bg_02.PNG" id="1_d58y2"]
-[ext_resource type="Texture2D" uid="uid://bygv02tp6w4cf" path="res://assets/Game_UI_03/PNG/backgrounds/bg_04.png" id="2_rhrir"]
+[ext_resource type="Texture2D" uid="uid://ci7p0vd0eiimh" path="res://assets/Game_UI_03/backgrounds/bg_04.png" id="1_d58y2"]
+[ext_resource type="Texture2D" uid="uid://cx35gqq4oogfh" path="res://assets/Game_UI_03/backgrounds/bg_02.PNG" id="2_rhrir"]
 
 [node name="Background" type="Node2D"]
 z_index = -1
@@ -10,9 +10,9 @@ z_index = -1
 z_index = -2
 position = Vector2(534, 974)
 rotation = 1.5708
-texture = ExtResource("2_rhrir")
+texture = ExtResource("1_d58y2")
 
 [node name="Bg02" type="Sprite2D" parent="."]
 z_index = -1
 position = Vector2(579, 1007)
-texture = ExtResource("1_d58y2")
+texture = ExtResource("2_rhrir")
