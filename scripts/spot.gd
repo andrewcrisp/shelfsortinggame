@@ -69,5 +69,5 @@ func remove_back_item():
 func score_item():
 	heldItem.send_to_scoreboard()
 	heldItem = null
-	Globals.scoreboard.score_item(points)
+	Globals.score.score_item(points)
 	

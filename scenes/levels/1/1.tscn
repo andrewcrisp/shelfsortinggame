@@ -1,69 +1,51 @@
-[gd_scene load_steps=9 format=3 uid="uid://w1sbduy44y4r"]
+[gd_scene load_steps=6 format=3 uid="uid://w1sbduy44y4r"]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_fvbel"]
-load_path = "res://.godot/imported/bg_03.PNG-a85e9496be282919381bbd7607d05bab.ctex"
+[ext_resource type="PackedScene" uid="uid://p4l3i4l4bbde" path="res://scenes/levels/1/background.tscn" id="1_ersib"]
+[ext_resource type="Script" uid="uid://bw0xa6hnbpimj" path="res://scripts/level.gd" id="1_mutj4"]
+[ext_resource type="PackedScene" uid="uid://bd1b7yuh7jh1n" path="res://scenes/shelf.tscn" id="2_fl4el"]
+[ext_resource type="PackedScene" uid="uid://cvjhx3ftchjyy" path="res://scenes/item_spawner.tscn" id="4_22n3q"]
+[ext_resource type="PackedScene" uid="uid://bhx7bu0ri37hn" path="res://scenes/ui/scoreboard.tscn" id="5_g7cpj"]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ersib"]
-load_path = "res://.godot/imported/bg_02.PNG-1bd50bb7bf34f61e2202b67ef9dedef6.ctex"
+[node name="Level" type="Node2D"]
+script = ExtResource("1_mutj4")
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_fl4el"]
-load_path = "res://.godot/imported/s_01.png-bcab0ea3507c3a1eec422b0cf7546dd1.ctex"
+[node name="Background" parent="." instance=ExtResource("1_ersib")]
+z_index = -5
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_mutj4"]
-load_path = "res://.godot/imported/s_t_08.png-0dc7487cddb1ed59cc4203c981a268a5.ctex"
+[node name="Shelves" type="Node2D" parent="."]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_22n3q"]
-load_path = "res://.godot/imported/s_09.png-f99fcd907ec0ef35f80799411483b962.ctex"
+[node name="Shelf" parent="Shelves" instance=ExtResource("2_fl4el")]
+position = Vector2(257, 200)
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_g7cpj"]
-load_path = "res://.godot/imported/Tex_veg_a_ (1).png-3e73eeb97fbeba875e2a45c788518e4d.ctex"
+[node name="Shelf2" parent="Shelves" instance=ExtResource("2_fl4el")]
+position = Vector2(799, 200)
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_kchu7"]
-load_path = "res://.godot/imported/Tex_veg_a_ (3).PNG-79cadcd1ec7b20e525af580a88cb8d2b.ctex"
+[node name="Shelf3" parent="Shelves" instance=ExtResource("2_fl4el")]
+position = Vector2(257, 1160)
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_aru1e"]
-load_path = "res://.godot/imported/Tex_tool_a_ (38).png-7adae98fd1706d87ad3b59d9007394f1.ctex"
+[node name="Shelf4" parent="Shelves" instance=ExtResource("2_fl4el")]
+position = Vector2(257, 920)
 
-[node name="Node2D" type="Node2D"]
+[node name="Shelf5" parent="Shelves" instance=ExtResource("2_fl4el")]
+position = Vector2(257, 680)
 
-[node name="Bg03" type="Sprite2D" parent="."]
-position = Vector2(549, 1037)
-texture = SubResource("CompressedTexture2D_fvbel")
+[node name="Shelf6" parent="Shelves" instance=ExtResource("2_fl4el")]
+position = Vector2(257, 440)
 
-[node name="Bg04" type="Sprite2D" parent="."]
-modulate = Color(0, 0, 0, 0.509)
-position = Vector2(646, 1013)
-texture = SubResource("CompressedTexture2D_ersib")
+[node name="Shelf7" parent="Shelves" instance=ExtResource("2_fl4el")]
+position = Vector2(799, 1160)
 
-[node name="Bg02" type="Sprite2D" parent="."]
-position = Vector2(544, 954)
-texture = SubResource("CompressedTexture2D_ersib")
+[node name="Shelf8" parent="Shelves" instance=ExtResource("2_fl4el")]
+position = Vector2(799, 920)
 
-[node name="S01" type="Sprite2D" parent="."]
-position = Vector2(854, 1215)
-scale = Vector2(0.3125, 0.3125)
-texture = SubResource("CompressedTexture2D_fl4el")
+[node name="Shelf9" parent="Shelves" instance=ExtResource("2_fl4el")]
+position = Vector2(799, 680)
 
-[node name="ST08" type="Sprite2D" parent="."]
-position = Vector2(678.953, 1774.5)
-scale = Vector2(0.714953, 0.714953)
-texture = SubResource("CompressedTexture2D_mutj4")
+[node name="Shelf10" parent="Shelves" instance=ExtResource("2_fl4el")]
+position = Vector2(799, 440)
 
-[node name="S09" type="Sprite2D" parent="."]
-position = Vector2(771.25, 421.375)
-scale = Vector2(0.573781, 0.350271)
-texture = SubResource("CompressedTexture2D_22n3q")
+[node name="item_spawner" parent="." instance=ExtResource("4_22n3q")]
 
-[node name="TexVegA(1)" type="Sprite2D" parent="."]
-position = Vector2(910, 418)
-scale = Vector2(0.5, 0.5)
-texture = SubResource("CompressedTexture2D_g7cpj")
-
-[node name="TexVegA(3)" type="Sprite2D" parent="."]
-position = Vector2(857, 1227)
-scale = Vector2(0.488281, 0.521485)
-texture = SubResource("CompressedTexture2D_kchu7")
-
-[node name="TexToolA(38)" type="Sprite2D" parent="."]
-position = Vector2(246, 1787)
-texture = SubResource("CompressedTexture2D_aru1e")
+[node name="Scoreboard" parent="." instance=ExtResource("5_g7cpj")]
+z_index = 6
+position = Vector2(540, 1757)

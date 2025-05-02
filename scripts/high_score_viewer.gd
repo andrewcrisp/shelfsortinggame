@@ -3,6 +3,7 @@ extends Control
 var hiscoresFilePath = "res://assets/text/hiscores.json"
 var userHiscoresFilePath = "user://hiscores.json"
 var hiscores = Array([], TYPE_OBJECT, "Node", ScoreEntry)
+@onready var current_level = null
 
 func _ready():
 	load_hiscores()

@@ -2,14 +2,14 @@
 
 [ext_resource type="PackedScene" uid="uid://dkbqxgkjy5dog" path="res://scenes/spot.tscn" id="1_eyi4x"]
 [ext_resource type="Script" uid="uid://cyt58qth41sa8" path="res://scripts/shelf.gd" id="1_xj574"]
-[ext_resource type="Texture2D" uid="uid://chua45bfmyoe" path="res://assets/Game_UI_03/ui/s_t_09.png" id="3_00mi8"]
+[ext_resource type="Texture2D" uid="uid://chua45bfmyoe" path="res://assets/ui/s_t_09.png" id="3_00mi8"]
 
 [node name="Shelf" type="Node2D"]
 script = ExtResource("1_xj574")
 
 [node name="Spot1" parent="." instance=ExtResource("1_eyi4x")]
 z_index = 1
-position = Vector2(-90, 0)
+position = Vector2(-130, 0)
 scale = Vector2(2, 3)
 
 [node name="Spot2" parent="." instance=ExtResource("1_eyi4x")]
@@ -18,9 +18,9 @@ scale = Vector2(2, 3)
 
 [node name="Spot3" parent="." instance=ExtResource("1_eyi4x")]
 z_index = 1
-position = Vector2(90, 0)
+position = Vector2(130, 0)
 scale = Vector2(2, 3)
 
 [node name="ST09" type="Sprite2D" parent="."]
-scale = Vector2(0.1, 0.8)
+scale = Vector2(0.2, 1.6)
 texture = ExtResource("3_00mi8")

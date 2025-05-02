@@ -3,8 +3,9 @@ extends Node
 const MINUTES: int = 60
 
 var game: Game
-var scoreboard: Scoreboard
+var score: Score
 var itemSpawner: Item_Spawner
+var current_level
 
 var gamemodes = {
 	"two_minute_timed" = "res://scenes/timed_level.tscn",
@@ -27,7 +28,7 @@ func _ready() -> void:
 	populate_groceries()	
 	
 func populate_levels():
-	levels.append("res://scenes/levels/1/level.tscn")
+	levels.append("res://scenes/levels/1/1.tscn")
 	
 func populate_groceries():
 	groceries.append("res://scenes/groceries/sunflower.tscn")

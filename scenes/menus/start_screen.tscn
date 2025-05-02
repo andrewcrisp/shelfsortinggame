@@ -1,19 +1,26 @@
-[gd_scene format=3 uid="uid://duu4i61jd05wk"]
+[gd_scene load_steps=3 format=3 uid="uid://duu4i61jd05wk"]
+
+[ext_resource type="Texture2D" uid="uid://buaxocwjhdqi3" path="res://assets/decor/banner Applenobackground.png" id="1_7c6e5"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_7c6e5"]
+font_size = 50
 
 [node name="StartScreen" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 
-[node name="GameTitle" type="Label" parent="."]
-layout_mode = 1
+[node name="BannerApplenobackground" type="Sprite2D" parent="."]
+texture = ExtResource("1_7c6e5")
+
+[node name="GameTitle" type="Label" parent="BannerApplenobackground"]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -380.5
-offset_right = 380.5
+offset_left = -839.0
+offset_right = -78.0
 offset_bottom = 103.0
 grow_horizontal = 2
-theme_override_font_sizes/font_size = 75
 text = "A Shelf Sorting Game"
-horizontal_alignment = 1
+label_settings = SubResource("LabelSettings_7c6e5")
+horizontal_alignment = 2
 vertical_alignment = 1

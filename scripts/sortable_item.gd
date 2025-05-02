@@ -32,7 +32,7 @@ func _process(_delta: float) -> void:
 func drop():
 	if isFollowingMouse:
 		isFollowingMouse = false
-		Globals.game.current_level.drop_item()
+		Globals.current_level.drop_item()
 		
 		z_index = Globals.z_levels["placed_item"]
 		if (hoveredArea != null
@@ -42,10 +42,10 @@ func drop():
 
 func tryGrab():
 	if (isGrabbable
-	&& Globals.game.current_level.carriedItem == null):
+	&& Globals.current_level.carriedItem == null):
 		z_index = Globals.z_levels["held_item"]
 		isFollowingMouse = true
-		Globals.game.current_level.hold_item($".")
+		Globals.current_level.hold_item($".")
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	hoveredArea = area
@@ -56,6 +56,6 @@ func _on_area_2d_area_exited(area: Area2D) -> void:
 		
 func send_to_scoreboard():
 	var tween = create_tween()	
-	tween.set_loops(1).tween_property($Sprite2D, "global_position", Globals.scoreboard.global_position, .5)
+	tween.set_loops(1).tween_property($Sprite2D, "global_position", Globals.current_level.scoreboard.global_position, .5)
 	tween.parallel().tween_property($"Sprite2D", "scale", Vector2(), .5)
 	tween.tween_callback($".".queue_free)

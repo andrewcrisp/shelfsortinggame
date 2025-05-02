@@ -3,9 +3,12 @@ extends Node2D
 signal score(points)
 
 var carriedItem = null
+var scoreboard: scoreboard
 
 func _ready() -> void:
 	Globals.itemSpawner = $item_spawner
+	Globals.current_level = $"."
+	scoreboard = $Scoreboard
 	connect("score", _on_shelf_score)
 	get_tree().call_group("shelves", "spawnContents")
 

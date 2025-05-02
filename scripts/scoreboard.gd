@@ -1,15 +1,4 @@
-class_name Scoreboard extends Control
+class_name scoreboard extends Node2D
 
-var score = 0
-
-func _ready() -> void:
-	score = 0
-	
 func _process(_delta: float) -> void:
-	$ScoreLabel.text = str(score)
-	
-func score_item(points):
-	score += points
-
-func reset():
-	score = 0
+	$Label.text = str(Globals.score.score)
