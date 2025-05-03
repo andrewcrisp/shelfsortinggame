@@ -21,7 +21,7 @@ var z_levels = {
 var groceries = []
 var levels = []
 var about_level = "res://scenes/levels/special/about.tscn"
-var starting_menu_level = "res://scenes/menus/startig_menu.tscn"
+var starting_menu_level = "res://scenes/menus/starting_menu.tscn"
 
 func _ready() -> void:
 	populate_levels()

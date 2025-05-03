@@ -6,12 +6,21 @@ var dragposition = 0
 var lastArea: Spot
 var hoveredArea = null
 var isGrabbable = true
+var mySprite
+var myShape
 
 func _ready() -> void:
 	$SortableItemShape/CollisionShape2D.shape.size = $Sprite2D.region_rect.size * 1.1
 	$SortableItemShape.connect("area_entered", _on_area_2d_area_entered)
 	$SortableItemShape.connect("area_exited", _on_area_2d_area_exited)
+	mySprite = $Sprite2D
+	myShape = $SortableItemShape/CollisionShape2D
+	resetCollisionShape()
+	pass
 	
+func resetCollisionShape():
+	#$SortableItemShape/CollisionShape2D.shape.size = $Sprite2D.region_rect.size * 1.1
+	$SortableItemShape/CollisionShape2D.shape.size = $Sprite2D.texture.get_size()
 func _input(event: InputEvent) -> void:
 	if (event is InputEventMouseButton
 		|| event is InputEventScreenTouch):
@@ -28,6 +37,7 @@ func _input(event: InputEvent) -> void:
 func _process(_delta: float) -> void:
 	if (isFollowingMouse):
 		global_position = dragposition
+	
 
 func drop():
 	if isFollowingMouse:
@@ -56,6 +66,6 @@ func _on_area_2d_area_exited(area: Area2D) -> void:
 		
 func send_to_scoreboard():
 	var tween = create_tween()	
-	tween.set_loops(1).tween_property($Sprite2D, "global_position", Globals.current_level.scoreboard.global_position, .5)
+	tween.set_loops(1).tween_property($Sprite2D, "global_position", Globals.current_level.myScoreboard.global_position, .5)
 	tween.parallel().tween_property($"Sprite2D", "scale", Vector2(), .5)
 	tween.tween_callback($".".queue_free)
