@@ -27,7 +27,7 @@ func load_hiscores():
 		var node_data = json.data
 		
 		# Firstly, we need to create the object and add it to the tree and set its position.
-		var newScore:ScoreEntry = load("res://scenes/score_entry.tscn").instantiate()
+		var newScore:ScoreEntry = load("res://scenes/components/score_entry.tscn").instantiate()
 
 		# Now we set the remaining variables.
 		newScore.gameMode = node_data["gameMode"]

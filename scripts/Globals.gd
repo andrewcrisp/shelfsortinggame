@@ -8,8 +8,8 @@ var itemSpawner: Item_Spawner
 var current_level
 
 var gamemodes = {
-	"two_minute_timed" = "res://scenes/timed_level.tscn",
-	"endless" = "res://scenes/endless_mode.tscn"
+	"two_minute_timed" = "res://scenes/modes/timed_level.tscn",
+	"endless" = "res://scenes/modes/endless_mode.tscn"
 }
 
 var z_levels = {

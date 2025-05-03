@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cen6idq2e3365"]
 
 [ext_resource type="Script" uid="uid://dy2weaxebyrav" path="res://scripts/high_score_viewer.gd" id="1_t7k5k"]
-[ext_resource type="PackedScene" uid="uid://dseliesn0o4sx" path="res://scenes/scores_list.tscn" id="3_67yak"]
+[ext_resource type="PackedScene" uid="uid://dseliesn0o4sx" path="res://scenes/components/scores_list.tscn" id="3_67yak"]
 
 [node name="HighScoreViewer" type="Control"]
 layout_mode = 3

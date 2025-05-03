@@ -8,7 +8,7 @@ func _ready():
 
 func AddScore(score:String, gamemode:String):
 	$Control/ScoreLabel.text = str(score)
-	var newScore:ScoreEntry = load("res://scenes/score_entry.tscn").instantiate()
+	var newScore:ScoreEntry = load("res://scenes/components/score_entry.tscn").instantiate()
 	newScore.gameMode = gamemode
 	var dateScored := Time.get_datetime_dict_from_system()
 	newScore.dateScored = dateFormat % [

@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://p4l3i4l4bbde" path="res://scenes/levels/1/background.tscn" id="1_ersib"]
 [ext_resource type="Script" uid="uid://bw0xa6hnbpimj" path="res://scripts/level.gd" id="1_mutj4"]
-[ext_resource type="PackedScene" uid="uid://bd1b7yuh7jh1n" path="res://scenes/shelf.tscn" id="2_fl4el"]
-[ext_resource type="PackedScene" uid="uid://cvjhx3ftchjyy" path="res://scenes/item_spawner.tscn" id="4_22n3q"]
+[ext_resource type="PackedScene" uid="uid://bd1b7yuh7jh1n" path="res://scenes/components/shelf.tscn" id="2_fl4el"]
+[ext_resource type="PackedScene" uid="uid://cvjhx3ftchjyy" path="res://scenes/components/item_spawner.tscn" id="4_22n3q"]
 [ext_resource type="PackedScene" uid="uid://bhx7bu0ri37hn" path="res://scenes/ui/scoreboard.tscn" id="5_g7cpj"]
 
 [node name="Level" type="Node2D"]

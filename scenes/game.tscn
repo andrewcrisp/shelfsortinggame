@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://b6e00skvjt6r"]
 
 [ext_resource type="Script" uid="uid://d1krl6w6f8av4" path="res://scripts/game.gd" id="1_uwrxv"]
-[ext_resource type="PackedScene" uid="uid://cfwvj4m5wtga" path="res://scenes/score.tscn" id="2_yqjtg"]
+[ext_resource type="PackedScene" uid="uid://cfwvj4m5wtga" path="res://scenes/components/score.tscn" id="2_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://be7fbaw21lj7s" path="res://scenes/menus/menu_background.tscn" id="3_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://duu4i61jd05wk" path="res://scenes/menus/start_screen.tscn" id="4_lbhrr"]
 
@@ -35,5 +35,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
+offset_left = -540.0
+offset_top = -960.0
+offset_right = -540.0
+offset_bottom = -960.0
 grow_horizontal = 2
 grow_vertical = 2

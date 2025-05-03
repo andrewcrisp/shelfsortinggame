@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://b5rb3vco0eqhs"]
 
 [ext_resource type="Script" uid="uid://dkjqu71nx3jqu" path="res://scripts/conveyor.gd" id="1_y326v"]
-[ext_resource type="PackedScene" uid="uid://dkbqxgkjy5dog" path="res://scenes/spot.tscn" id="2_y326v"]
+[ext_resource type="PackedScene" uid="uid://dkbqxgkjy5dog" path="res://scenes/components/spot.tscn" id="2_y326v"]
 
 [sub_resource type="Curve2D" id="Curve2D_y326v"]
 _data = {

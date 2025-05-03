@@ -23,4 +23,5 @@ position = Vector2(579, 1007)
 texture = ExtResource("2_rhrir")
 
 [node name="Background" type="Sprite2D" parent="."]
+position = Vector2(540, 960)
 texture = ExtResource("3_rhrir")

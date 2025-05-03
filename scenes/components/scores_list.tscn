@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dseliesn0o4sx"]
 
-[ext_resource type="PackedScene" uid="uid://drnh7cm2u64u0" path="res://scenes/score_entry.tscn" id="1_dwkto"]
+[ext_resource type="PackedScene" uid="uid://drnh7cm2u64u0" path="res://scenes/components/score_entry.tscn" id="1_dwkto"]
 
 [node name="ScoresList" type="Control"]
 layout_mode = 3

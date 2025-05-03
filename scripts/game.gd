@@ -29,7 +29,7 @@ func on_timed_level_timeout():
 	show_score_report_after_level(gamemode)
 	
 func show_score_report_after_level(gamemode):
-	var score_report:ScoreReport = load("res://scenes/score_report.tscn").instantiate()
+	var score_report:ScoreReport = load("res://scenes/levels/special/score_report.tscn").instantiate()
 	add_child(score_report)
 	score_report.AddScore(str(Globals.score.score), gamemode)
 	Globals.current_level.queue_free()
