@@ -30,8 +30,8 @@ func GetRandomItemScene():
 	return item
 	
 func SpawnNewItem():
-	return SpawnNewItemFromScene()
 	return SpawnNewItemFromTextureList()
+	return SpawnNewItemFromScene()
 	
 func SpawnNewItemFromTextureList():
 	var itemTexture = GetRandomItemTexture()
@@ -72,22 +72,28 @@ func CheckSaneItemSpawns(newItem):
 func _ready() -> void:
 	for item in Globals.groceries:
 		scenes.append(load(item))
-	load_asset_pack()
+	#load_asset_pack()
 	load_item_textures()
 	sortableItemScene = load("res://scenes/sortable_item.tscn")
 	
 func load_asset_pack():
 	var success = ProjectSettings.load_resource_pack("res://assets.pck")
+	print(success)
 	pass
+	
 func load_item_textures():
 	var path = "res://assets/items/tools"
 	var dir := DirAccess.open(path)
 	dir.list_dir_begin()
+	print("opening pack")
 	while true:
 		var file_name = dir.get_next()
+		print(file_name)
 		if file_name == "":
 			#break the while loop when get_next() returns ""
 			break
+		elif !file_name.begins_with(".") and file_name.ends_with(".import"):
+			itemTextures.append(load(path + "/" + file_name.replace(".import", "")))
 		elif !file_name.begins_with(".") and !file_name.ends_with(".import"):
 			#if !file_name.ends_with(".import"):
 			itemTextures.append(load(path + "/" + file_name))

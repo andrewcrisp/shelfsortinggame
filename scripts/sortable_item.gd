@@ -22,7 +22,7 @@ func resetCollisionShape():
 		$SortableItemShape/CollisionShape2D.shape.size = $Sprite2D.region_rect.size * 1.1
 	else:
 		$SortableItemShape/CollisionShape2D.shape.size = $Sprite2D.texture.get_size()
-		#$SortableItemShape/CollisionShape2D.shape.size = $Sprite2D.region_rect.size * 1.1
+
 func _input(event: InputEvent) -> void:
 	if (event is InputEventMouseButton
 		|| event is InputEventScreenTouch):
