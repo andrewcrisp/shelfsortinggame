@@ -6,13 +6,19 @@ var dragposition = 0
 var lastArea: Spot
 var hoveredArea = null
 var isGrabbable = true
-var mySprite
+var mySprite: Sprite2D
 var myShape
 
 func _ready() -> void:
 	$SortableItemShape.connect("area_entered", _on_area_2d_area_entered)
 	$SortableItemShape.connect("area_exited", _on_area_2d_area_exited)
 	mySprite = $Sprite2D
+	#mySprite.material = ShaderMaterial.new()
+	#var myShader = load("res://scripts/shaders/carrying.gdshader")
+	#mySprite.material.shader = myShader
+	#mySprite.material.shader
+	
+	
 	myShape = $SortableItemShape/CollisionShape2D
 	resetCollisionShape()
 	pass
@@ -44,6 +50,9 @@ func _process(_delta: float) -> void:
 func drop():
 	if isFollowingMouse:
 		isFollowingMouse = false
+		#mySprite.material.set_shader_parameter("intensity", 0)
+		mySprite.material.set_shader_parameter("width", 0)
+		#instance_shader_parameters/intensity
 		Globals.current_level.drop_item()
 		
 		z_index = Globals.z_levels["placed_item"]
@@ -58,6 +67,8 @@ func tryGrab():
 		z_index = Globals.z_levels["held_item"]
 		isFollowingMouse = true
 		Globals.current_level.hold_item($".")
+		#mySprite.material.set_shader_parameter("intensity", 1)
+		mySprite.material.set_shader_parameter("width", 10.0)
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	hoveredArea = area
