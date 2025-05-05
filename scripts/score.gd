@@ -5,8 +5,6 @@ var score = 0
 func _ready() -> void:
 	score = 0
 	
-
-	
 func score_item(points):
 	score += points
 

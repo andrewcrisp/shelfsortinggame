@@ -1,7 +1,5 @@
 extends Node2D
 
-signal score(points)
-
 var numItemsHeld = 0
 
 func _ready() -> void:
@@ -84,5 +82,5 @@ func spawnContents():
 	spawnFrontItems()
 	spawnBackItems()
 	
-func _on_spot_scored(points: Variant) -> void:
-	score.emit(points)
+#func _on_spot_scored(points: Variant) -> void:
+	#score.emit(points)

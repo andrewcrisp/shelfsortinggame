@@ -78,8 +78,12 @@ func _on_area_2d_area_exited(area: Area2D) -> void:
 	if (hoveredArea == area):
 		hoveredArea = null
 		
+func send_to_scoreboard_callback():
+	$".".queue_free()
+	
 func send_to_scoreboard():
+	Globals.current_level.myScoreboard.bounce_scoreboard()
 	var tween = create_tween()	
 	tween.set_loops(1).tween_property($Sprite2D, "global_position", Globals.current_level.myScoreboard.global_position, .5)
 	tween.parallel().tween_property($"Sprite2D", "scale", Vector2(), .5)
-	tween.tween_callback($".".queue_free)
+	tween.tween_callback(send_to_scoreboard_callback)

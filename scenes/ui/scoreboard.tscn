@@ -23,6 +23,6 @@ text = "0"
 label_settings = SubResource("LabelSettings_fscay")
 horizontal_alignment = 2
 
-[node name="TexToolA(38)" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("2_48oo3")
