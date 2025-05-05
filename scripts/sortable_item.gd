@@ -8,17 +8,12 @@ var hoveredArea = null
 var isGrabbable = true
 var mySprite: Sprite2D
 var myShape
+var current_shader
 
 func _ready() -> void:
 	$SortableItemShape.connect("area_entered", _on_area_2d_area_entered)
 	$SortableItemShape.connect("area_exited", _on_area_2d_area_exited)
 	mySprite = $Sprite2D
-	#mySprite.material = ShaderMaterial.new()
-	#var myShader = load("res://scripts/shaders/carrying.gdshader")
-	#mySprite.material.shader = myShader
-	#mySprite.material.shader
-	
-	
 	myShape = $SortableItemShape/CollisionShape2D
 	resetCollisionShape()
 	pass
@@ -28,6 +23,9 @@ func resetCollisionShape():
 		$SortableItemShape/CollisionShape2D.shape.size = $Sprite2D.region_rect.size * 1.1
 	else:
 		$SortableItemShape/CollisionShape2D.shape.size = $Sprite2D.texture.get_size()
+
+func setShader():
+	$Sprite2D.material.shader = current_shader
 
 func _input(event: InputEvent) -> void:
 	if (event is InputEventMouseButton
@@ -50,9 +48,7 @@ func _process(_delta: float) -> void:
 func drop():
 	if isFollowingMouse:
 		isFollowingMouse = false
-		#mySprite.material.set_shader_parameter("intensity", 0)
 		mySprite.material.set_shader_parameter("width", 0)
-		#instance_shader_parameters/intensity
 		Globals.current_level.drop_item()
 		
 		z_index = Globals.z_levels["placed_item"]
@@ -67,9 +63,14 @@ func tryGrab():
 		z_index = Globals.z_levels["held_item"]
 		isFollowingMouse = true
 		Globals.current_level.hold_item($".")
-		#mySprite.material.set_shader_parameter("intensity", 1)
 		mySprite.material.set_shader_parameter("width", 10.0)
 
+func use_background_shader():
+	$Sprite2D.material.shader = Globals.background_item_shader
+
+func use_carried_item_shader():
+	$Sprite2D.material.shader = Globals.carried_item_shader
+	
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	hoveredArea = area
 

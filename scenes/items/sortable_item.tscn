@@ -1,0 +1,22 @@
+[gd_scene load_steps=6 format=3 uid="uid://byy1lu7vid3s3"]
+
+[ext_resource type="Script" uid="uid://nfy7ub0kmvu6" path="res://scripts/sortable_item.gd" id="1_oa2c4"]
+[ext_resource type="PackedScene" uid="uid://cd6k6bp0xc3jt" path="res://scenes/sortable_item_shape.tscn" id="2_bbsx8"]
+[ext_resource type="Shader" uid="uid://drlnm1h1y1nto" path="res://scripts/shaders/background_item.gdshader" id="3_bbsx8"]
+[ext_resource type="Texture2D" uid="uid://cvgm0vtdvdndq" path="res://assets/items/tools/Tex_tool_a_ (2).png" id="4_bbsx8"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_h6606"]
+resource_local_to_scene = true
+shader = ExtResource("3_bbsx8")
+
+[node name="SortableItem" type="Node2D"]
+script = ExtResource("1_oa2c4")
+
+[node name="SortableItemShape" parent="." instance=ExtResource("2_bbsx8")]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 4
+material = SubResource("ShaderMaterial_h6606")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_bbsx8")
+region_rect = Rect2(51, 0, 11, 16)

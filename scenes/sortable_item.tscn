@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://nfy7ub0kmvu6" path="res://scripts/sortable_item.gd" id="1_2kofd"]
 [ext_resource type="PackedScene" uid="uid://cd6k6bp0xc3jt" path="res://scenes/sortable_item_shape.tscn" id="3_8rrxl"]
-[ext_resource type="Shader" uid="uid://c2v3bnoqtll7y" path="res://scenes/outline.gdshader" id="3_kf6sb"]
+[ext_resource type="Shader" uid="uid://c2v3bnoqtll7y" path="res://scripts/shaders/outline.gdshader" id="3_kf6sb"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_h6606"]
 resource_local_to_scene = true

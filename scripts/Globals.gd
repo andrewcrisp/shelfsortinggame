@@ -6,6 +6,8 @@ var game: Game
 var score: Score
 var itemSpawner: Item_Spawner
 var current_level
+var carried_item_shader
+var background_item_shader
 
 var gamemodes = {
 	"two_minute_timed" = "res://scenes/modes/timed_level.tscn",
@@ -25,7 +27,9 @@ var starting_menu_level = "res://scenes/menus/starting_menu.tscn"
 
 func _ready() -> void:
 	populate_levels()
-	populate_groceries()	
+	populate_groceries()
+	carried_item_shader = load("res://scripts/shaders/outline.gdshader")
+	background_item_shader = load("res://scripts/shaders/background_item.gdshader")
 	
 func populate_levels():
 	levels.append("res://scenes/levels/1/1.tscn")

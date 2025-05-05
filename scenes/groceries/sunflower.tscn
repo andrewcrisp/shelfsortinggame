@@ -1,15 +1,18 @@
 [gd_scene load_steps=6 format=3 uid="uid://bmln03dtehpvv"]
 
 [ext_resource type="Script" uid="uid://nfy7ub0kmvu6" path="res://scripts/sortable_item.gd" id="1_vxxt0"]
-[ext_resource type="Shader" uid="uid://c2s01ohs0q84d" path="res://scripts/shaders/carrying.gdshader" id="1_xphav"]
 [ext_resource type="PackedScene" uid="uid://cd6k6bp0xc3jt" path="res://scenes/sortable_item_shape.tscn" id="2_8qcyb"]
 [ext_resource type="Texture2D" uid="uid://ddfe256c7mtw5" path="res://assets/Basic_Furniture.png" id="2_boem4"]
+[ext_resource type="Shader" uid="uid://c2v3bnoqtll7y" path="res://scripts/shaders/outline.gdshader" id="3_xphav"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xphav"]
 resource_local_to_scene = true
-shader = ExtResource("1_xphav")
+shader = ExtResource("3_xphav")
 shader_parameter/color = Color(1, 1, 1, 1)
-shader_parameter/intensity = 0.0
+shader_parameter/width = 0.0
+shader_parameter/pattern = 0
+shader_parameter/inside = false
+shader_parameter/add_margins = true
 
 [node name="SortableItem" type="Node2D"]
 script = ExtResource("1_vxxt0")

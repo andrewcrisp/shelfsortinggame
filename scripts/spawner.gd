@@ -75,7 +75,7 @@ func _ready() -> void:
 	#load_asset_pack()
 	load_item_textures()
 	sortableItemScene = load("res://scenes/sortable_item.tscn")
-	
+		
 func load_asset_pack():
 	var success = ProjectSettings.load_resource_pack("res://assets.pck")
 	print(success)
