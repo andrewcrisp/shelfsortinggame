@@ -46,7 +46,6 @@ func populateScoresList(gamemode):
 	for i:ScoreEntry in hiscores:
 		if (gamemode == "all" || i.gameMode == gamemode):
 			$Control/ScoresList/Scores.add_child(i)
-			#$Control/ScoresList/Scores.move_child(i, 0)
 			if $Control/ScoresList/Scores.get_child_count() >= maxScores:
 				break
 		

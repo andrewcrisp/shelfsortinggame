@@ -85,10 +85,8 @@ func load_item_textures():
 	var path = "res://assets/items/tools"
 	var dir := DirAccess.open(path)
 	dir.list_dir_begin()
-	print("opening pack")
 	while true:
 		var file_name = dir.get_next()
-		print(file_name)
 		if file_name == "":
 			#break the while loop when get_next() returns ""
 			break
