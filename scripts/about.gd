@@ -30,7 +30,11 @@ var credits = [
 		"Art",
 		"Prototype art by",
 		"Cup Nooble",
-		"https://cupnooble.itch.io/"
+		"https://cupnooble.itch.io/",
+		"",
+		"Final art by",
+		"A-ravlik",
+		"https://www.artstation.com/a-ravlik/store"
 	],[
 		"Testers",
 		"Name 1"
@@ -40,7 +44,8 @@ var credits = [
 		"https://godotengine.org/license",
 		"",
 		"Credits scrawl by benbishopnz",
-		"https://github.com/benbishopnz/godot-credits/tree/master",
+		#"https://github.com/benbishopnz/godot-credits/tree/master",
+		"https://github.com/benbishopnz/",
 		"With edit for Godot4 by u/theRealDyer"
 	],[
 		"Special thanks",
@@ -49,6 +54,8 @@ var credits = [
 	]
 ]
 
+#func _ready() -> void:
+	#$CreditsContainer/Line.position.y = $CreditsContainer.position.y
 
 func _process(delta):
 	var scroll_speed = base_speed * delta
@@ -76,6 +83,7 @@ func _process(delta):
 	if lines.size() > 0:
 		for l in lines:
 			l.position.y -= scroll_speed
+			#if l.position.y < $CreditsContainer.global_position.y:
 			if l.position.y < -l.get_line_height():
 				lines.erase(l)
 				l.queue_free()
@@ -94,6 +102,7 @@ func add_line():
 	var new_line = line.duplicate()
 	new_line.text = section.pop_front()
 	lines.append(new_line)
+	new_line.position.y = $CreditsContainer.size.y
 	if curr_line == 0:
 		# new_line.add_color_override("font_color", title_color)
 		new_line.set("theme_override_colors/font_color", title_color)
