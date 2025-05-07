@@ -35,7 +35,7 @@ func show_score_report_after_level(gamemode):
 	Globals.current_level.queue_free()
 	mode_control.queue_free()
 	Globals.current_level = score_report
-	score_report.get_node("Control/LoadMainMenuButton").connect("pressed", load_main_menu)
+	score_report.get_node("BackButton").connect("clicked", load_main_menu)
 	
 func load_endless_mode_level(level:String):
 	var gameMode = load(Globals.gamemodes["endless"]).instantiate()

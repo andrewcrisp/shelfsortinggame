@@ -2,13 +2,12 @@ class_name ScoreEntry extends Control
 
 var gameMode:String = "Game Mode"
 var dateScored:String = "Date"
-var score:String = "Score"
+var score:int = 0
 
 func _ready() -> void:
 	$HBoxContainer/GameModeLabel.text = gameMode
-	
 	$HBoxContainer/DateLabel.text = dateScored
-	$HBoxContainer/ScoreLabel.text = score	
+	$HBoxContainer/ScoreLabel.text = str(score).pad_decimals(0)
 
 func save():
 	var save_dict = {

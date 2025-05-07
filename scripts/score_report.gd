@@ -7,7 +7,7 @@ func _ready():
 	#AddScore("25", "mygame")
 
 func AddScore(score:String, gamemode:String):
-	$Control/ScoreLabel.text = str(score)
+	$HBoxContainer/ScoreLabel.text = str(score)
 	var newScore:ScoreEntry = load("res://scenes/components/score_entry.tscn").instantiate()
 	newScore.gameMode = gamemode
 	var dateScored := Time.get_datetime_dict_from_system()
@@ -18,9 +18,9 @@ func AddScore(score:String, gamemode:String):
 		dateScored["hour"],
 		dateScored["minute"]
 		]
-	newScore.score = score
-	$Control/HighScoreViewer.hiscores.append(newScore)
-	$Control/HighScoreViewer.populateScoresList()
-	$Control/HighScoreViewer.saveScoresList()
+	newScore.score = int(score)
+	$Frame/HighScoreViewer.hiscores.append(newScore)
+	$Frame/HighScoreViewer.populateScoresList(gamemode)
+	$Frame/HighScoreViewer.saveScoresList()
 	#$Control/HighScoreViewer
 	

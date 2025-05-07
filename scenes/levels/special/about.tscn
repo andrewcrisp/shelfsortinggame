@@ -1,11 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://ccs0onn1wjpym"]
+[gd_scene load_steps=7 format=3 uid="uid://ccs0onn1wjpym"]
 
 [ext_resource type="Script" uid="uid://ceb6u228ag6ag" path="res://scripts/about.gd" id="1_20wyb"]
 [ext_resource type="PackedScene" uid="uid://duu4i61jd05wk" path="res://scenes/menus/start_screen.tscn" id="2_c2fn5"]
 [ext_resource type="PackedScene" uid="uid://be7fbaw21lj7s" path="res://scenes/menus/menu_background.tscn" id="2_c5lyi"]
-[ext_resource type="Texture2D" uid="uid://bowj3gehqhwo5" path="res://assets/decor/s_t_02.png" id="3_b6uca"]
-[ext_resource type="Texture2D" uid="uid://ry81kr58g4kr" path="res://assets/decor/s_11.png" id="4_qnn82"]
-[ext_resource type="Texture2D" uid="uid://bt1kwmmtvcgb5" path="res://assets/decor/s_t_06.PNG" id="5_qnn82"]
+[ext_resource type="PackedScene" uid="uid://cuq8nt1ni1j5" path="res://scenes/ui/frame.tscn" id="3_qnn82"]
 [ext_resource type="PackedScene" uid="uid://eo7qn7ss8wjk" path="res://scenes/ui/arrow_button.tscn" id="7_mqbnl"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_20wyb"]
@@ -45,40 +43,7 @@ size_flags_horizontal = 3
 label_settings = SubResource("LabelSettings_20wyb")
 horizontal_alignment = 1
 
-[node name="Frame" type="Control" parent="CreditsContainer"]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Frame_top" type="Sprite2D" parent="CreditsContainer/Frame"]
-z_index = 1
-position = Vector2(540, 0)
-scale = Vector2(1, 0.5)
-texture = ExtResource("4_qnn82")
-
-[node name="Frame_bottom" type="Sprite2D" parent="CreditsContainer/Frame"]
-z_index = 1
-position = Vector2(540, 530)
-rotation = -3.14159
-scale = Vector2(1, 0.5)
-texture = ExtResource("4_qnn82")
-
-[node name="Frame_right" type="Sprite2D" parent="CreditsContainer/Frame"]
-z_index = 4
-position = Vector2(930, 250)
-rotation = 1.5708
-texture = ExtResource("3_b6uca")
-
-[node name="Frame_left" type="Sprite2D" parent="CreditsContainer/Frame"]
-z_index = 4
-position = Vector2(150, 250)
-rotation = 1.5708
-texture = ExtResource("3_b6uca")
-
-[node name="Parchment" type="Sprite2D" parent="CreditsContainer"]
-position = Vector2(540, 238)
-scale = Vector2(1, 0.5)
-texture = ExtResource("5_qnn82")
+[node name="Frame" parent="CreditsContainer" instance=ExtResource("3_qnn82")]
 
 [node name="Background" parent="." instance=ExtResource("2_c5lyi")]
 size_flags_horizontal = 3

@@ -1,0 +1,41 @@
+[gd_scene load_steps=4 format=3 uid="uid://cuq8nt1ni1j5"]
+
+[ext_resource type="Texture2D" uid="uid://ry81kr58g4kr" path="res://assets/decor/s_11.png" id="1_0nom6"]
+[ext_resource type="Texture2D" uid="uid://bowj3gehqhwo5" path="res://assets/decor/s_t_02.png" id="2_v67gs"]
+[ext_resource type="Texture2D" uid="uid://bt1kwmmtvcgb5" path="res://assets/decor/s_t_06.PNG" id="3_ds6np"]
+
+[node name="Frame" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Frame_top" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(540, 0)
+scale = Vector2(1, 0.5)
+texture = ExtResource("1_0nom6")
+
+[node name="Frame_bottom" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(540, 530)
+rotation = -3.14159
+scale = Vector2(1, 0.5)
+texture = ExtResource("1_0nom6")
+
+[node name="Frame_right" type="Sprite2D" parent="."]
+z_index = 4
+position = Vector2(930, 250)
+rotation = 1.5708
+texture = ExtResource("2_v67gs")
+
+[node name="Frame_left" type="Sprite2D" parent="."]
+z_index = 4
+position = Vector2(150, 250)
+rotation = 1.5708
+texture = ExtResource("2_v67gs")
+
+[node name="Parchment" type="Sprite2D" parent="."]
+position = Vector2(540, 238)
+scale = Vector2(1, 0.5)
+texture = ExtResource("3_ds6np")

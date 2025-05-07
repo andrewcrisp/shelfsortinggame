@@ -32,6 +32,7 @@ text = "Game Mode"
 label_settings = SubResource("LabelSettings_n3xs8")
 
 [node name="DateLabel" type="Label" parent="HBoxContainer"]
+visible = false
 layout_mode = 2
 text = "Date"
 label_settings = SubResource("LabelSettings_n3xs8")

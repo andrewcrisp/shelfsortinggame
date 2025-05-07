@@ -7,7 +7,7 @@ var hiscores = Array([], TYPE_OBJECT, "Node", ScoreEntry)
 
 func _ready():
 	load_hiscores()
-	populateScoresList()
+	populateScoresList("all")
 	
 func load_hiscores():
 	if not FileAccess.file_exists(userHiscoresFilePath):
@@ -32,18 +32,23 @@ func load_hiscores():
 		# Now we set the remaining variables.
 		newScore.gameMode = node_data["gameMode"]
 		newScore.dateScored = node_data["dateScored"]
-		newScore.score = str(node_data["score"]).pad_decimals(0)
+		newScore.score = int(node_data["score"])
 		hiscores.append(newScore)
 		
-func populateScoresList():
-	var oldscores :=$Control/ScoresList/Scores.get_children()
+func populateScoresList(gamemode):
+	var oldscores := $Control/ScoresList/Scores.get_children()
 	for child in oldscores:
 		$Control/ScoresList/Scores.remove_child(child)
 	hiscores.sort_custom(
-		func(a: ScoreEntry, b:ScoreEntry): return a.score < b.score
+		func(a: ScoreEntry, b:ScoreEntry): return a.score > b.score
 	)
-	for i in hiscores:
-		$Control/ScoresList/Scores.add_child(i)
+	var maxScores = 5
+	for i:ScoreEntry in hiscores:
+		if (gamemode == "all" || i.gameMode == gamemode):
+			$Control/ScoresList/Scores.add_child(i)
+			#$Control/ScoresList/Scores.move_child(i, 0)
+			if $Control/ScoresList/Scores.get_child_count() >= maxScores:
+				break
 		
 func saveScoresList():
 	var save_file = FileAccess.open(userHiscoresFilePath, FileAccess.WRITE)	
