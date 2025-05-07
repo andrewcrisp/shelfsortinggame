@@ -66,9 +66,11 @@ func tryGrab():
 		mySprite.material.set_shader_parameter("width", 10.0)
 
 func use_background_shader():
+	$Sprite2D.scale = Vector2(.8,.8)
 	$Sprite2D.material.shader = Globals.background_item_shader
 
 func use_carried_item_shader():
+	$Sprite2D.scale = Vector2(1,1)
 	$Sprite2D.material.shader = Globals.carried_item_shader
 	
 func _on_area_2d_area_entered(area: Area2D) -> void:

@@ -51,6 +51,7 @@ func move_item_forward():
 			item.isGrabbable = true
 			item.position = Vector2.ZERO
 			item.mySprite.material.shader = Globals.carried_item_shader
+			item.get_node("Sprite2D").scale = Vector2(1,1)
 	
 func isHoldingItem():
 	return heldItem != null
