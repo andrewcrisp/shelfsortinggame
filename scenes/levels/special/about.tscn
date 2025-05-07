@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://ccs0onn1wjpym"]
+[gd_scene load_steps=9 format=3 uid="uid://ccs0onn1wjpym"]
 
 [ext_resource type="Script" uid="uid://ceb6u228ag6ag" path="res://scripts/about.gd" id="1_20wyb"]
 [ext_resource type="PackedScene" uid="uid://duu4i61jd05wk" path="res://scenes/menus/start_screen.tscn" id="2_c2fn5"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bowj3gehqhwo5" path="res://assets/decor/s_t_02.png" id="3_b6uca"]
 [ext_resource type="Texture2D" uid="uid://ry81kr58g4kr" path="res://assets/decor/s_11.png" id="4_qnn82"]
 [ext_resource type="Texture2D" uid="uid://bt1kwmmtvcgb5" path="res://assets/decor/s_t_06.PNG" id="5_qnn82"]
+[ext_resource type="PackedScene" uid="uid://eo7qn7ss8wjk" path="res://scenes/ui/arrow_button.tscn" id="7_mqbnl"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_20wyb"]
 font_size = 26
@@ -82,3 +83,6 @@ texture = ExtResource("5_qnn82")
 [node name="Background" parent="." instance=ExtResource("2_c5lyi")]
 size_flags_horizontal = 3
 size_flags_vertical = 3
+
+[node name="BackButton" parent="." instance=ExtResource("7_mqbnl")]
+position = Vector2(225, 1695)

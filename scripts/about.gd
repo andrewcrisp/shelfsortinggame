@@ -54,7 +54,8 @@ var credits = [
 	]
 ]
 
-#func _ready() -> void:
+func _ready() -> void:
+	$BackButton.connect("clicked", finish)
 	#$CreditsContainer/Line.position.y = $CreditsContainer.position.y
 
 func _process(delta):
