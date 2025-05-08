@@ -41,6 +41,11 @@ theme_override_font_sizes/font_size = 50
 text = "Two minute timed
 "
 
+[node name="ArcadeModeButton" type="Button" parent="Control/Menu"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Arcade"
+
 [node name="AboutButton" type="Button" parent="Control/Menu"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50

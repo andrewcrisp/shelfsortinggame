@@ -11,7 +11,8 @@ var background_item_shader
 
 var gamemodes = {
 	"two_minute_timed" = "res://scenes/modes/timed_level.tscn",
-	"endless" = "res://scenes/modes/endless_mode.tscn"
+	"endless" = "res://scenes/modes/endless_mode.tscn",
+	"arcade" = "res://scenes/modes/arcade.tscn"
 }
 
 var z_levels = {

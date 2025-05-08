@@ -70,4 +70,5 @@ func score_item():
 	heldItem.send_to_scoreboard()
 	heldItem = null
 	Globals.score.score_item(points)
+	Globals.current_level.score.emit()
 	

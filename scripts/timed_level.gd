@@ -1,4 +1,4 @@
-extends Node2D
+class_name timed_level extends Node2D
 
 @onready var timer = $Timer
 @onready var timedisplay = $Container/Label
@@ -10,6 +10,10 @@ func _ready() -> void:
 	$Container.size = viewportSize
 	timedisplay.position.x = viewportSize.x/2
 	
+	
 func _process(_delta: float) -> void:
 	if !(timer.is_stopped()):
 		timedisplay.text = String.num(timer.time_left, 1)
+
+func increment_timer(time: int=1):
+	$Timer.start($Timer.time_left + time)
