@@ -6,7 +6,7 @@ void vertex() {
 
 void fragment() {
 		vec4 tex = texture(TEXTURE, UV);
-		tex.rgb = vec3(tex.r, tex.g, tex.b)/3.0;
+		tex.rgb = vec3(tex.r, tex.g, tex.b)/5.0;
 		COLOR = tex;
 }
 
