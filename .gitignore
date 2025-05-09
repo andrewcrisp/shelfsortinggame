@@ -21,4 +21,4 @@ android/
 bin/
 
 
-
+.secrets/
