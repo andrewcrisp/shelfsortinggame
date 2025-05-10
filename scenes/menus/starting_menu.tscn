@@ -36,13 +36,13 @@ position = Vector2(300, 0)
 label = "Endless"
 
 [node name="TimedModeButton" parent="Control/Menu" instance=ExtResource("3_pd0ss")]
-position = Vector2(300, 100)
+position = Vector2(300, 125)
 label = "Two minute timed"
 
 [node name="ArcadeModeButton" parent="Control/Menu" instance=ExtResource("3_pd0ss")]
-position = Vector2(300, 200)
+position = Vector2(300, 250)
 label = "Arcade"
 
 [node name="AboutButton" parent="Control/Menu" instance=ExtResource("3_pd0ss")]
-position = Vector2(300, 300)
+position = Vector2(300, 375)
 label = "About"

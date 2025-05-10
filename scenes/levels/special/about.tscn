@@ -13,9 +13,10 @@ font_size = 26
 script = ExtResource("1_20wyb")
 
 [node name="StartScreen" parent="." instance=ExtResource("2_c2fn5")]
-offset_left = 540.0
+z_index = 1
+offset_left = 500.0
 offset_top = 200.0
-offset_right = 540.0
+offset_right = 500.0
 offset_bottom = 200.0
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -46,8 +47,6 @@ horizontal_alignment = 1
 [node name="Frame" parent="CreditsContainer" instance=ExtResource("3_qnn82")]
 
 [node name="Background" parent="." instance=ExtResource("2_c5lyi")]
-size_flags_horizontal = 3
-size_flags_vertical = 3
 
 [node name="BackButton" parent="." instance=ExtResource("7_mqbnl")]
 position = Vector2(225, 1695)

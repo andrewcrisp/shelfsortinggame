@@ -1,22 +1,25 @@
 [gd_scene load_steps=5 format=3 uid="uid://vo1vo0ydaemw"]
 
 [ext_resource type="Script" uid="uid://dvohwe5ruu68t" path="res://scripts/ui/mode_button.gd" id="1_pyqoi"]
-[ext_resource type="Texture2D" uid="uid://b2ehi60b88amq" path="res://assets/decor/s_09.png" id="2_p18f0"]
+[ext_resource type="Texture2D" uid="uid://j0hml6r0s2bx" path="res://assets/ui/Button.png" id="2_pyqoi"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_tm883"]
 line_spacing = 0.0
 font_size = 50
+font_color = Color(0, 0, 0, 1)
+outline_size = 12
+outline_color = Color(0.854902, 0.698039, 0.45098, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pyqoi"]
 resource_local_to_scene = true
-size = Vector2(452, 94)
+size = Vector2(508, 94)
 
 [node name="ModeButton" type="Node2D"]
 script = ExtResource("1_pyqoi")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.6, 0.3)
-texture = ExtResource("2_p18f0")
+scale = Vector2(0.8, 0.6)
+texture = ExtResource("2_pyqoi")
 
 [node name="Label" type="Label" parent="."]
 anchors_preset = 8
@@ -30,9 +33,11 @@ offset_right = 91.0
 offset_bottom = 34.5
 grow_horizontal = 2
 grow_vertical = 2
+text = "ENDLESS"
 label_settings = SubResource("LabelSettings_tm883")
 
 [node name="ClickArea" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ClickArea"]
 shape = SubResource("RectangleShape2D_pyqoi")

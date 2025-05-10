@@ -1,9 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://duu4i61jd05wk"]
+[gd_scene load_steps=4 format=3 uid="uid://duu4i61jd05wk"]
 
 [ext_resource type="Texture2D" uid="uid://buaxocwjhdqi3" path="res://assets/decor/banner Applenobackground.png" id="1_7c6e5"]
+[ext_resource type="Texture2D" uid="uid://v0kxybltbeiu" path="res://assets/decor/s_06.PNG" id="2_box8u"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_7c6e5"]
-font_size = 50
+font_size = 55
+font_color = Color(0.854902, 0.698039, 0.45098, 1)
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
 
 [node name="TitleBanner" type="Control"]
 layout_mode = 3
@@ -16,11 +20,18 @@ texture = ExtResource("1_7c6e5")
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -839.0
-offset_right = -78.0
-offset_bottom = 103.0
+offset_left = -758.5
+offset_top = -25.0
+offset_right = 2.5
+offset_bottom = 78.0
 grow_horizontal = 2
 text = "A Shelf Sorting Game"
 label_settings = SubResource("LabelSettings_7c6e5")
 horizontal_alignment = 2
 vertical_alignment = 1
+
+[node name="S06" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(67, 22)
+scale = Vector2(3.17572, 0.766773)
+texture = ExtResource("2_box8u")

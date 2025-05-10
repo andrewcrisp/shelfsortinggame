@@ -1,5 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://be7fbaw21lj7s"]
+[gd_scene load_steps=3 format=3 uid="uid://be7fbaw21lj7s"]
 
+[ext_resource type="Texture2D" uid="uid://dbswvw24v2jmi" path="res://assets/ui/background12.png" id="2_d58y2"]
 [ext_resource type="Texture2D" uid="uid://lhr7g30bvf3u" path="res://assets/backgrounds/Background1.png" id="3_rhrir"]
 
 [node name="Background" type="Node2D"]
@@ -8,3 +9,8 @@ z_index = -1
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(540, 960)
 texture = ExtResource("3_rhrir")
+
+[node name="Background12" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(540, 950)
+texture = ExtResource("2_d58y2")
