@@ -1,6 +1,6 @@
 extends Node2D
 
-signal score(points)
+#signal score(points)
 
 var carriedItem = null
 var myScoreboard: scoreboard

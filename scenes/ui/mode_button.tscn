@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://vo1vo0ydaemw"]
+
+[ext_resource type="Script" uid="uid://dvohwe5ruu68t" path="res://scripts/ui/mode_button.gd" id="1_pyqoi"]
+[ext_resource type="Texture2D" uid="uid://b2ehi60b88amq" path="res://assets/decor/s_09.png" id="2_p18f0"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_tm883"]
+line_spacing = 0.0
+font_size = 50
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pyqoi"]
+resource_local_to_scene = true
+size = Vector2(452, 94)
+
+[node name="ModeButton" type="Node2D"]
+script = ExtResource("1_pyqoi")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.6, 0.3)
+texture = ExtResource("2_p18f0")
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -91.0
+offset_top = -34.5
+offset_right = 91.0
+offset_bottom = 34.5
+grow_horizontal = 2
+grow_vertical = 2
+label_settings = SubResource("LabelSettings_tm883")
+
+[node name="ClickArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ClickArea"]
+shape = SubResource("RectangleShape2D_pyqoi")

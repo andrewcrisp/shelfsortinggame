@@ -31,7 +31,7 @@ func GetRandomItemScene():
 	
 func SpawnNewItem():
 	return SpawnNewItemFromTextureList()
-	return SpawnNewItemFromScene()
+	#return SpawnNewItemFromScene()
 	
 func SpawnNewItemFromTextureList():
 	var itemTexture = GetRandomItemTexture()

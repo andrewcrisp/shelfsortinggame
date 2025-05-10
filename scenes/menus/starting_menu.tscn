@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cb0bwa4vxe8rc"]
+[gd_scene load_steps=3 format=3 uid="uid://cb0bwa4vxe8rc"]
 
 [ext_resource type="Script" uid="uid://4jlhnrt30nd2" path="res://scripts/starting_menu.gd" id="1_awdct"]
+[ext_resource type="PackedScene" uid="uid://vo1vo0ydaemw" path="res://scenes/ui/mode_button.tscn" id="3_pd0ss"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_awdct")
@@ -30,23 +31,18 @@ offset_bottom = 119.5
 grow_horizontal = 0
 grow_vertical = 2
 
-[node name="EndlessModeButton" type="Button" parent="Control/Menu"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 50
-text = "Endless"
+[node name="EndlessModeButton" parent="Control/Menu" instance=ExtResource("3_pd0ss")]
+position = Vector2(300, 0)
+label = "Endless"
 
-[node name="TimedModeButton" type="Button" parent="Control/Menu"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 50
-text = "Two minute timed
-"
+[node name="TimedModeButton" parent="Control/Menu" instance=ExtResource("3_pd0ss")]
+position = Vector2(300, 100)
+label = "Two minute timed"
 
-[node name="ArcadeModeButton" type="Button" parent="Control/Menu"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 50
-text = "Arcade"
+[node name="ArcadeModeButton" parent="Control/Menu" instance=ExtResource("3_pd0ss")]
+position = Vector2(300, 200)
+label = "Arcade"
 
-[node name="AboutButton" type="Button" parent="Control/Menu"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 50
-text = "About"
+[node name="AboutButton" parent="Control/Menu" instance=ExtResource("3_pd0ss")]
+position = Vector2(300, 300)
+label = "About"

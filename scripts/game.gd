@@ -85,9 +85,9 @@ func reset_scoreboard():
 func show_starting_menu():
 	var starting_menu = load("res://scenes/menus/starting_menu.tscn").instantiate()
 	starting_menu.get_node("Control/Menu/EndlessModeButton").connect("pressed", on_endless_mode_button_pressed)
-	starting_menu.get_node("Control/Menu/AboutButton").connect("pressed", on_about_button_pressed)
 	starting_menu.get_node("Control/Menu/TimedModeButton").connect("pressed", on_timed_mode_button_pressed)
 	starting_menu.get_node("Control/Menu/ArcadeModeButton").connect("pressed", on_arcade_button_pressed)
+	starting_menu.get_node("Control/Menu/AboutButton").connect("pressed", on_about_button_pressed)
 	starting_menu.visible = true
 	starting_menu.z_index = 1
 	add_child(starting_menu)
