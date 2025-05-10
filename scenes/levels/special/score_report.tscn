@@ -18,9 +18,10 @@ outline_color = Color(0, 0, 0, 1)
 script = ExtResource("1_s1n5t")
 
 [node name="TitleBanner" parent="." instance=ExtResource("2_jul3p")]
-offset_left = 540.0
+z_index = 1
+offset_left = 500.0
 offset_top = 200.0
-offset_right = 540.0
+offset_right = 500.0
 offset_bottom = 200.0
 
 [node name="Background" parent="." instance=ExtResource("2_2elch")]
