@@ -46,3 +46,22 @@ label = "Arcade"
 [node name="AboutButton" parent="Control/Menu" instance=ExtResource("3_pd0ss")]
 position = Vector2(300, 375)
 label = "About"
+
+[node name="TextEdit" type="TextEdit" parent="."]
+offset_left = 90.0
+offset_top = 1300.0
+offset_right = 990.0
+offset_bottom = 1800.0
+theme_override_font_sizes/font_size = 30
+text = "Hello Tester.
+Thanks for being a beta tester for A Shelf Sorting Game.
+
+Right now, the basic game works. We have three game modes:
+1. Endless Mode
+2. Timed Mode
+3. Arcade Mode
+
+The next feature goal is a tutorial of sorts. I plan on just a simple example of moving pieces to new spaces, clearing a shelf, and items moving from the back to the front when a shelf empties."
+editable = false
+context_menu_enabled = false
+wrap_mode = 1
