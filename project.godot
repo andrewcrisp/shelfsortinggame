@@ -10,10 +10,10 @@ config_version=5
 
 [application]
 
-config/name="ShelfSortingGame"
+config/name="A Shelf Sorting Game"
 run/main_scene="uid://b6e00skvjt6r"
 config/features=PackedStringArray("4.4", "Mobile")
-config/icon="res://icon.svg"
+config/icon="uid://cs02b15ur25q"
 
 [autoload]
 
