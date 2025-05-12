@@ -43,7 +43,6 @@ func _input(event: InputEvent) -> void:
 func _process(_delta: float) -> void:
 	if (isFollowingMouse):
 		global_position = dragposition
-	
 
 func drop():
 	if isFollowingMouse:

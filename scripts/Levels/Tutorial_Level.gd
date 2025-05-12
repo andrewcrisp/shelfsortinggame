@@ -2,6 +2,7 @@ class_name Tutorial_Level extends Level
 
 var hand
 var hand_position_over_item = Vector2(30,100)
+var spot
 
 func _ready() -> void:
 	Globals.itemSpawner = $item_spawner
@@ -11,23 +12,35 @@ func _ready() -> void:
 	$Shelves/Shelf7.remove_from_group("shelves")
 	$Shelves/Shelf8.remove_from_group("shelves")
 	#get_tree().call_group("shelves", "spawnContents")
+	
+	spot = $Shelves/Shelf3/Spot3
 	load_tutorial_shelves()
 	hand = $Hand
-	animate_move_one($Shelves/Shelf3/Spot3, $Shelves/Shelf8/Spot3)
+	animate_move($Shelves/Shelf3/Spot3, $Shelves/Shelf8/Spot3)
+	
+	
+	
+func get_tutorial_item(itemNumber:int):
+	var item:SortableItem = $item_spawner.SpawnNewItemFromTextureList(itemNumber)
+	
+	item.set_script(load("res://scripts/tutorial_item.gd"))
+	return item
+
 	
 func load_tutorial_shelves():
-	$Shelves/Shelf3/Spot3.hold_item($item_spawner.SpawnNewItemFromTextureList(0))
-	$Shelves/Shelf3/Spot1.hold_item_in_background($item_spawner.SpawnNewItemFromTextureList(1))
+	$Shelves/Shelf3/Spot3.hold_item(get_tutorial_item(0))
+	$Shelves/Shelf3/Spot3.heldItem.set_grabbable(true)
+	$Shelves/Shelf3/Spot1.hold_item_in_background(get_tutorial_item(1))
 	
-	$Shelves/Shelf8/Spot2.hold_item($item_spawner.SpawnNewItemFromTextureList(0))
-	$Shelves/Shelf8/Spot3.hold_item_in_background($item_spawner.SpawnNewItemFromTextureList(1))
+	$Shelves/Shelf8/Spot2.hold_item(get_tutorial_item(0))
+	$Shelves/Shelf8/Spot3.hold_item_in_background(get_tutorial_item(1))
 	
-	$Shelves/Shelf7/Spot1.hold_item($item_spawner.SpawnNewItemFromTextureList(0))
+	$Shelves/Shelf7/Spot1.hold_item(get_tutorial_item(0))
 	$Shelves/Shelf7/Spot2.hold_item(null)
-	$Shelves/Shelf7/Spot3.hold_item($item_spawner.SpawnNewItemFromTextureList(1))
+	$Shelves/Shelf7/Spot3.hold_item(get_tutorial_item(1))
 	
 	
-func animate_move_one(spot_from, spot_to):
+func animate_move(spot_from, spot_to):
 	var tween = create_tween()
 	tween.tween_property($Hand, "position", (spot_from.global_position - hand_position_over_item), 1)
 	for i in 3:
@@ -37,8 +50,3 @@ func animate_move_one(spot_from, spot_to):
 		tween.tween_property($Hand, "position", spot_to.global_position - hand_position_over_item, .2)
 		tween.tween_property($Hand, "visible", false, 0)
 		tween.tween_property($Hand, "position", (spot_from.global_position - hand_position_over_item), .2)
-		
-	tween.tween_callback(hide_hand)
-
-func hide_hand():
-	$Hand.visible = false

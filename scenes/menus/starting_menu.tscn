@@ -45,7 +45,7 @@ label = "Arcade"
 
 [node name="TutorialButton" parent="Control/Menu" instance=ExtResource("3_pd0ss")]
 position = Vector2(300, 375)
-label = "Tutorial"
+label = "Coming soon"
 
 [node name="AboutButton" parent="Control/Menu" instance=ExtResource("3_pd0ss")]
 position = Vector2(300, 500)
