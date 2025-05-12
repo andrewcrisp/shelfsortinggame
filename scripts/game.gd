@@ -29,6 +29,10 @@ func on_timed_mode_button_pressed():
 	load_timed_level(selected_level)
 	reset_scoreboard()
 	
+func on_tutorial_button_pressed():
+	load_tutorial(Globals.tutorial_level)
+	reset_scoreboard()	
+	
 func on_timed_level_timeout():
 	show_score_report_after_level()
 	
@@ -68,7 +72,17 @@ func load_timed_level(level: String):
 	gameMode.timer.timeout.connect(on_timed_level_timeout)
 	gameMode.timer.wait_time = 2 * Globals.MINUTES
 	gameMode.timer.start()
-	
+
+func load_tutorial(level: String):
+	var gameMode = load(Globals.gamemodes["tutorial"]).instantiate()
+	load_level(level)
+	add_child(gameMode)
+	gamemode = "two_minute_hiscore"
+	mode_control = gameMode
+	gameMode.timer.timeout.connect(on_timed_level_timeout)
+	gameMode.timer.wait_time = 2 * Globals.MINUTES
+	gameMode.timer.start()
+
 func load_level(level: String):
 	var nextLevel = load(level).instantiate()
 	if(Globals.current_level != null):
@@ -87,6 +101,7 @@ func show_starting_menu():
 	starting_menu.get_node("Control/Menu/EndlessModeButton").connect("pressed", on_endless_mode_button_pressed)
 	starting_menu.get_node("Control/Menu/TimedModeButton").connect("pressed", on_timed_mode_button_pressed)
 	starting_menu.get_node("Control/Menu/ArcadeModeButton").connect("pressed", on_arcade_button_pressed)
+	starting_menu.get_node("Control/Menu/TutorialButton").connect("pressed", on_tutorial_button_pressed)
 	starting_menu.get_node("Control/Menu/AboutButton").connect("pressed", on_about_button_pressed)
 	starting_menu.visible = true
 	starting_menu.z_index = 1

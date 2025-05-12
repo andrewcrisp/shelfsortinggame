@@ -1,0 +1,1 @@
+class_name Tutorial_Mode extends Timed_Mode

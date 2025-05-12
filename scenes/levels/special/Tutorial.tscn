@@ -1,0 +1,51 @@
+[gd_scene load_steps=6 format=3 uid="uid://wkv7gnq7nsom"]
+
+[ext_resource type="Script" uid="uid://pqj3f06omnd6" path="res://scripts/Levels/Tutorial_Level.gd" id="1_wntmx"]
+[ext_resource type="PackedScene" uid="uid://p4l3i4l4bbde" path="res://scenes/levels/1/background.tscn" id="2_u0qv1"]
+[ext_resource type="PackedScene" uid="uid://bd1b7yuh7jh1n" path="res://scenes/components/shelf.tscn" id="3_00s1n"]
+[ext_resource type="PackedScene" uid="uid://cvjhx3ftchjyy" path="res://scenes/components/item_spawner.tscn" id="4_nrm25"]
+[ext_resource type="PackedScene" uid="uid://bhx7bu0ri37hn" path="res://scenes/ui/scoreboard.tscn" id="5_pq4at"]
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_wntmx")
+
+[node name="Background" parent="." instance=ExtResource("2_u0qv1")]
+z_index = -5
+
+[node name="Shelves" type="Node2D" parent="."]
+
+[node name="Shelf" parent="Shelves" instance=ExtResource("3_00s1n")]
+position = Vector2(257, 200)
+
+[node name="Shelf2" parent="Shelves" instance=ExtResource("3_00s1n")]
+position = Vector2(799, 200)
+
+[node name="Shelf3" parent="Shelves" instance=ExtResource("3_00s1n")]
+position = Vector2(257, 1160)
+
+[node name="Shelf4" parent="Shelves" instance=ExtResource("3_00s1n")]
+position = Vector2(257, 920)
+
+[node name="Shelf5" parent="Shelves" instance=ExtResource("3_00s1n")]
+position = Vector2(257, 680)
+
+[node name="Shelf6" parent="Shelves" instance=ExtResource("3_00s1n")]
+position = Vector2(257, 440)
+
+[node name="Shelf7" parent="Shelves" instance=ExtResource("3_00s1n")]
+position = Vector2(799, 1160)
+
+[node name="Shelf8" parent="Shelves" instance=ExtResource("3_00s1n")]
+position = Vector2(799, 920)
+
+[node name="Shelf9" parent="Shelves" instance=ExtResource("3_00s1n")]
+position = Vector2(799, 680)
+
+[node name="Shelf10" parent="Shelves" instance=ExtResource("3_00s1n")]
+position = Vector2(799, 440)
+
+[node name="item_spawner" parent="." instance=ExtResource("4_nrm25")]
+
+[node name="Scoreboard" parent="." instance=ExtResource("5_pq4at")]
+z_index = 6
+position = Vector2(540, 1757)

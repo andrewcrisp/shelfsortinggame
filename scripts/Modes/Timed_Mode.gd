@@ -1,4 +1,4 @@
-class_name timed_level extends Node2D
+class_name Timed_Mode extends Node2D
 
 @onready var timer = $Timer
 @onready var timedisplay = $Container/Label

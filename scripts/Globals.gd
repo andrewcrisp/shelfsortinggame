@@ -8,11 +8,13 @@ var itemSpawner: Item_Spawner
 var current_level
 var carried_item_shader
 var background_item_shader
+var tutorial_level
 
 var gamemodes = {
 	"two_minute_timed" = "res://scenes/modes/timed_level.tscn",
 	"endless" = "res://scenes/modes/endless_mode.tscn",
-	"arcade" = "res://scenes/modes/arcade.tscn"
+	"arcade" = "res://scenes/modes/arcade.tscn",
+	"tutorial" = "res://scenes/modes/tutorial_mode.tscn"
 }
 
 var z_levels = {
@@ -34,6 +36,7 @@ func _ready() -> void:
 	
 func populate_levels():
 	levels.append("res://scenes/levels/1/1.tscn")
+	tutorial_level = "res://scenes/levels/special/Tutorial.tscn"
 	
 func populate_groceries():
 	groceries.append("res://scenes/groceries/sunflower.tscn")

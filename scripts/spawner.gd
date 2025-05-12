@@ -8,6 +8,10 @@ var itemTextures = []
 var sortableItemScene
 var lastTwoItems = [null, null]
 
+func _ready() -> void:
+	
+	load_item_textures()
+	sortableItemScene = load("res://scenes/sortable_item.tscn")
 
 func _on_button_pressed() -> void:
 	SpawnNewItem()
@@ -17,9 +21,13 @@ func GetRandomItemTexture():
 	var randItemNumber = RandomNumberGenerator.new().randi() % (len(itemTextures) + (len(itemTextures)/randomDivisor ))
 	if (randItemNumber >= len(itemTextures)):
 		return null
-	var item = itemTextures[randItemNumber]
+	var item = GetItemTexture(randItemNumber)
 	return item
 
+func GetItemTexture(texture_number: int):
+	var item = itemTextures[texture_number]
+	return item
+	
 func GetRandomItemScene():
 	var randomDivisor = 4
 	var randItemNumber = RandomNumberGenerator.new().randi() % (len(scenes) + (len(scenes)/randomDivisor ))
@@ -32,13 +40,18 @@ func GetRandomItemScene():
 func SpawnNewItem():
 	return SpawnNewItemFromTextureList()
 	#return SpawnNewItemFromScene()
-	
-func SpawnNewItemFromTextureList():
-	var itemTexture = GetRandomItemTexture()
-	if (itemTexture == null):
-		return null
-	while !CheckSaneItemSpawns(itemTexture):
+
+func SpawnNewItemFromTextureList(texture = null):
+	var itemTexture
+	if (texture == null):
 		itemTexture = GetRandomItemTexture()
+		if (itemTexture == null):
+			return null
+		while !CheckSaneItemSpawns(itemTexture):
+			itemTexture = GetRandomItemTexture()
+	else:
+		itemTexture = GetItemTexture(texture)
+
 	var newItem:SortableItem = sortableItemScene.instantiate()
 	newItem.type = itemTexture
 	newItem.scale = Vector2(.5,.5)
@@ -69,17 +82,9 @@ func CheckSaneItemSpawns(newItem):
 		lastTwoItems[1] = newItem
 		return true
 
-func _ready() -> void:
+func load_grocery_textures():
 	for item in Globals.groceries:
 		scenes.append(load(item))
-	#load_asset_pack()
-	load_item_textures()
-	sortableItemScene = load("res://scenes/sortable_item.tscn")
-		
-func load_asset_pack():
-	var success = ProjectSettings.load_resource_pack("res://assets.pck")
-	print(success)
-	pass
 	
 func load_item_textures():
 	var path = "res://assets/items/tools"
@@ -92,7 +97,7 @@ func load_item_textures():
 			break
 		elif !file_name.begins_with(".") and file_name.ends_with(".import"):
 			itemTextures.append(load(path + "/" + file_name.replace(".import", "")))
-		elif !file_name.begins_with(".") and !file_name.ends_with(".import"):
-			#if !file_name.ends_with(".import"):
-			itemTextures.append(load(path + "/" + file_name))
+		#elif !file_name.begins_with(".") and !file_name.ends_with(".import"):
+			##if !file_name.ends_with(".import"):
+			#itemTextures.append(load(path + "/" + file_name))
 	dir.list_dir_end()

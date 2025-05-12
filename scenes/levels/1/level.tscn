@@ -1,12 +1,12 @@
 [gd_scene load_steps=5 format=3 uid="uid://botafqrb248p7"]
 
-[ext_resource type="Script" uid="uid://bw0xa6hnbpimj" path="res://scripts/level.gd" id="1_de24i"]
+[ext_resource type="Script" uid="uid://nmwvjenjcxfk" path="res://scripts/Levels/Random_Item_Level.gd" id="1_8t0bk"]
 [ext_resource type="PackedScene" uid="uid://cvjhx3ftchjyy" path="res://scenes/components/item_spawner.tscn" id="2_emed8"]
 [ext_resource type="PackedScene" uid="uid://bd1b7yuh7jh1n" path="res://scenes/components/shelf.tscn" id="3_nw4g8"]
 [ext_resource type="PackedScene" uid="uid://b5rb3vco0eqhs" path="res://scenes/components/conveyor.tscn" id="4_u2ksi"]
 
 [node name="Level" type="Node2D"]
-script = ExtResource("1_de24i")
+script = ExtResource("1_8t0bk")
 
 [node name="item_spawner" parent="." instance=ExtResource("2_emed8")]
 

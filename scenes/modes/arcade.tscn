@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://yogprfgvdto3"]
 
-[ext_resource type="Script" uid="uid://ddc87xo3cfu2l" path="res://scripts/arcade_mode.gd" id="1_jdirt"]
+[ext_resource type="Script" uid="uid://ddc87xo3cfu2l" path="res://scripts/Modes/Arcade_Mode.gd" id="1_jdirt"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_b8o7s"]
 font_size = 60

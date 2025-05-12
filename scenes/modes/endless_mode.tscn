@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://c5qqwril323d"]
 
-[ext_resource type="Script" uid="uid://bk6cmov6eggaq" path="res://scripts/endless_mode.gd" id="1_spjlh"]
+[ext_resource type="Script" uid="uid://bk6cmov6eggaq" path="res://scripts/Modes/Endless_Mode.gd" id="1_spjlh"]
 
 [node name="EndlessMode" type="Node2D"]
 script = ExtResource("1_spjlh")
