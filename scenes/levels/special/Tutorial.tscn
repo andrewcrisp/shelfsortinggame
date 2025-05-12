@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://wkv7gnq7nsom"]
+[gd_scene load_steps=7 format=3 uid="uid://wkv7gnq7nsom"]
 
 [ext_resource type="Script" uid="uid://pqj3f06omnd6" path="res://scripts/Levels/Tutorial_Level.gd" id="1_wntmx"]
 [ext_resource type="PackedScene" uid="uid://p4l3i4l4bbde" path="res://scenes/levels/1/background.tscn" id="2_u0qv1"]
 [ext_resource type="PackedScene" uid="uid://bd1b7yuh7jh1n" path="res://scenes/components/shelf.tscn" id="3_00s1n"]
 [ext_resource type="PackedScene" uid="uid://cvjhx3ftchjyy" path="res://scenes/components/item_spawner.tscn" id="4_nrm25"]
 [ext_resource type="PackedScene" uid="uid://bhx7bu0ri37hn" path="res://scenes/ui/scoreboard.tscn" id="5_pq4at"]
+[ext_resource type="PackedScene" uid="uid://iqvjjdi5hgu3" path="res://scenes/ui/hand.tscn" id="6_u4uaj"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_wntmx")
@@ -49,3 +50,7 @@ position = Vector2(799, 440)
 [node name="Scoreboard" parent="." instance=ExtResource("5_pq4at")]
 z_index = 6
 position = Vector2(540, 1757)
+
+[node name="Hand" parent="." instance=ExtResource("6_u4uaj")]
+z_index = 10
+position = Vector2(-224, 1025)
