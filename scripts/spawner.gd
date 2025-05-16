@@ -9,7 +9,6 @@ var sortableItemScene
 var lastTwoItems = [null, null]
 
 func _ready() -> void:
-	
 	load_item_textures()
 	sortableItemScene = load("res://scenes/sortable_item.tscn")
 

@@ -4,7 +4,7 @@ var type = "untyped"
 var isFollowingMouse = false
 var dragposition = 0
 var lastArea: Spot
-var hoveredArea = null
+var hoveredArea:Area2D = null
 var isGrabbable = true
 var mySprite: Sprite2D
 var myShape
@@ -29,14 +29,18 @@ func setShader():
 
 func _input(event: InputEvent) -> void:
 	if (event is InputEventMouseButton
-		|| event is InputEventScreenTouch):
-		if (event.is_pressed()):
-			var localPos = to_local(event.position)
-			var boundbox:Shape2D = $SortableItemShape/CollisionShape2D.shape
-			if boundbox.get_rect().has_point(localPos):
+	|| event is InputEventScreenTouch):
+		var localPos = to_local(event.position)
+		var boundbox:Shape2D = $SortableItemShape/CollisionShape2D.shape
+		var isMyEvent = boundbox.get_rect().has_point(localPos)
+		if (isMyEvent):
+			if (event.is_pressed()
+				&& hoveredArea.get_parent().heldItem == $"."):
 				tryGrab()
-		else:
-			drop()
+				get_viewport().set_input_as_handled()
+			elif (isFollowingMouse):
+				drop()
+				get_viewport().set_input_as_handled()
 	if isFollowingMouse:
 		dragposition = event.position
 	

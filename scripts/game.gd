@@ -101,7 +101,7 @@ func show_starting_menu():
 	starting_menu.get_node("Control/Menu/EndlessModeButton").connect("pressed", on_endless_mode_button_pressed)
 	starting_menu.get_node("Control/Menu/TimedModeButton").connect("pressed", on_timed_mode_button_pressed)
 	starting_menu.get_node("Control/Menu/ArcadeModeButton").connect("pressed", on_arcade_button_pressed)
-	#starting_menu.get_node("Control/Menu/TutorialButton").connect("pressed", on_tutorial_button_pressed)
+	starting_menu.get_node("Control/Menu/TutorialButton").connect("pressed", on_tutorial_button_pressed)
 	starting_menu.get_node("Control/Menu/AboutButton").connect("pressed", on_about_button_pressed)
 	starting_menu.visible = true
 	starting_menu.z_index = 1

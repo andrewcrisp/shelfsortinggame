@@ -20,7 +20,7 @@ func hold_item_in_background(item: SortableItem):
 	if (item != null):
 		backItem = item
 		item.lastArea = null
-		item.z_index = BACK_ITEM_Z
+		item.z_index = Globals.z_levels["back_item"]
 		item.isGrabbable = false
 		item.position = BACK_ITEM_POSITION
 		item.use_background_shader()
@@ -31,8 +31,8 @@ func hold_item(item: SortableItem):
 		if (item.lastArea != null):
 			item.lastArea.remove_item()
 		item.lastArea = $"."
-		item.global_rotation = 0
-		item.z_index = HELD_ITEM_Z
+		#item.global_rotation = 0
+		item.z_index = Globals.z_levels["placed_item"]
 		#item.use_carried_item_shader()
 		item_placed.emit($".")
 
@@ -45,9 +45,9 @@ func move_item_forward():
 				item.lastArea.remove_item()
 			item.lastArea = $"."
 			item.global_rotation = 0
-			item.z_index = HELD_ITEM_Z
+			item.z_index = Globals.z_levels["placed_item"]
 			remove_back_item()
-			item.z_index = HELD_ITEM_Z
+			#item.z_index = HELD_ITEM_Z
 			item.isGrabbable = true
 			item.position = Vector2.ZERO
 			item.mySprite.material.shader = Globals.carried_item_shader

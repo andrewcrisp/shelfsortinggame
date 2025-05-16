@@ -20,7 +20,8 @@ var gamemodes = {
 var z_levels = {
 	"background" = 0,
 	"held_item" = 1000,
-	"placed_item" = 500
+	"placed_item" = 500,
+	"back_item" = 400
 }
 
 var groceries = []
